@@ -20,4 +20,28 @@
   </section>
 </main>
 
+
+<section class="col-section black">
+  <h2>Liste détaillée des dés</h2>
+
+  <table>
+    <thead>
+      <tr>
+      <th>Nombre du dé</th>
+      <% for (const [dice, occ] of Object.entries(counts)) { %>
+        <td><%= dice %></td>
+      <% } %>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Nombre obtenu</th>
+      <% for (const [dice, occ] of Object.entries(counts)) { %>
+        <td><%= occ %></td>
+      <% } %>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
 <%- include('partials/footer') %>
