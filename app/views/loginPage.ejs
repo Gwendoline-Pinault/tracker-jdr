@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+  <nav class="navbar default-color">
+    <a href="/" class="nav-item default-hover">Accueil</a>
+    <% rpgList.forEach(rpg => { %>
+      <a href="/campagne/<%= rpg.slug %>" class="nav-item default-hover"><%= rpg.name %></a>
+    <% }); %>
+    <% if (username) { %>
+        <p class="black flex-row-center">
+          <img class="img-icon-bg mr-10" src="/static/images/circle-user.svg">
+          <b class="mr-10"><%= username %></b>
+          <a href="/logout" class="icon nav-icon"><img src="/static/images/logout.png" alt="[->" class="img-icon"></a>
+        </p>
+      <% } else { %>
+        <a href="/login-page" class="icon nav-icon default-color default-hover"><img src="/static/images/login-icon.svg" class="img-icon" alt="->]"/></a>
+      <% } %>
+  </nav>
+
+  <h1 class="title bg-title">Se connecter</h1>
+
+  <form action="/login" method="post" class="login-form">
+    <label for="username">Identifiant</label>
+    <input type="text" name="username" id="username" required pattern="[^<>%${}?!/@]">
+
+    <label for="password">Mot de passe</label>
+    <input type="password" name="password" id="password">
+
+    <button class="button validation-button" type="submit">Se connecter</button>
+  </form>
+
+  <% if (error && error !== null) { %>
+    <p class="fail"><%= error %></p>
+  <% } %>
+
+<%- include('partials/footer') %>

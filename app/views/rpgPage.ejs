@@ -1,0 +1,71 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navigation', {rpgData, rpgList, pageTitle: rpgData.slug, username}) %>
+
+<main class="main-body-page">
+  <section class="pj-recap" id="<%= rpgData.slug %>-recap-section">
+    <!-- Liste des statistiques globales des personnages -->
+    <% rpgData.characters.forEach(character => { %>
+      <article id="<%= character %>" class="<%= rpgData.slug %>-color relative">
+        <a href="/campagne/<%= rpgData.slug %>/details/<%= character %>" type="button" class="more-info-btn button-<%= rpgData.slug %>">+</a>
+
+        <h3><%= character %></h3>
+
+        <!-- Détermine la couleur du texte en fonction de la valeur et du système de jeu -->
+        <p class="round   
+          <%- include('partials/textColor', {diceSystem: rpgData.diceSystem, data: rpgData.stats[character].globalAvg}) %>
+        "> <%= rpgData.stats[character].globalAvg %> </p>
+
+        <p class="dice-info"><%= rpgData.stats[character].dicesList.length %> dés</p>
+
+        <div class="pj-recap-crit">
+          <p class="dice-info">Réussites critiques : <%= rpgData.stats[character].globalSuccess %></p>
+          <p class="dice-info">Échecs critiques : <%= rpgData.stats[character].globalFail %></p>
+        </div>
+        
+        <p class="dice-info">Médiane : <%= rpgData.stats[character].globalMedian %></p>
+
+      </article>
+    <% }) %>
+  </section>
+  
+  <div class="title-container">
+    <h2 id="nb-games">Nombre de parties : <%= Object.keys(rpgData.games).length %> </h2>
+    <% if (rpgData.status === "En cours" && username) { %>
+      <a href="/campagne/<%= rpgData.slug %>/nouvelle-partie" class="button button-<%= rpgData.slug %> <%= rpgData.slug %>-color ">Ajouter partie</a>
+    <% } %>
+  </div>
+  
+  <section class="stats-section" id="<%= rpgData.slug %>-stats-section">
+    <!-- Liste des parties -->
+    <% for (const [date, game] of Object.entries(rpgData.games)) { %>
+      <article class="<%= rpgData.slug %>-article" id="<%= date %>">
+        <h3 class="<%= rpgData.slug %>-color-title">Partie du <%= date %></h3>
+        <% rpgData.characters.forEach(character => { %>
+          <div>
+            <h4><%= character %></h4>
+            <p>Dés lancés : <%= game[character].dices.length %></p>
+
+            <p>
+              Moyenne : 
+              <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, data: game[character].average}) %>">
+                <%= game[character].average %>
+              </span>
+            </p>
+            <p>
+              Médiane : 
+              <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, data: game[character].median}) %>">
+                <%= game[character].median %>
+              </span>
+            </p>
+
+            <p>Réussites : <span><%= game[character].success %></span></p>
+            <p>Échecs : <span><%= game[character].fail %></span></p>
+          </div>
+        <% }); %>
+      </article>
+    <%} %>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<%- include('partials/navigation', {rpgData, rpgList, pageTitle: rpgData.slug}) %>
+
+<main class="main-body-page">
+  <h1 class="main-title"> Nouvelle partie</h1>
+  
+  <form action="/add-game/<%= rpg %>" method="post" class="form <%= rpg %>-color">
+    <div>
+      <label for="date">Date de la partie :</label>
+      <input type="date" name="date" id="date" required>
+    </div>
+
+    <% characters.forEach(character => { %>
+      <div class="character-div">
+        <h3><%= character %></h3>
+
+        <div>
+          <label for="<%= character %>-dices">Liste des dés :</label>
+          <input type="text" name="<%= character %>" id="<%= character %>-dices" class="dices-list" pattern="^((([0-9]){1,3}),\s?)*([0-9]{1,3})$">
+        </div>
+      </div>
+    <% }); %>
+
+    <div class="character-div">
+      <h3>Campagne terminée :</h3>
+      <label for="status-true">Oui</label>
+      <input type="radio" name="status" id="status-true" value="true">
+      <label for="status-false">Non</label>
+      <input type="radio" name="status" id="status-false" value="false" checked>
+    </div>
+
+    <button type="submit" class="button button-<%= rpg %> form-button">Valider</button>
+  </form>
+</main>
+ 
+<%- include('partials/footer') %>
