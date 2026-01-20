@@ -5,7 +5,7 @@ const mainController = {
   home: (req, res) => {
     const rpgFilesList = dataMapper.rpgFilesList();
 
-    res.render('index', { rpgFilesList });
+    res.render('index.ejs', { rpgFilesList });
   },
   rpgPage: (req, res) => {
     const rpgSlug = req.params.rpg;
@@ -22,7 +22,7 @@ const mainController = {
     
     const username = req.session.username;
 
-    res.render('rpgPage', { rpgData: orderedData, rpgList, username });
+    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList, username });
   },
   characterPage: (req, res) => {
     const rpgSlug = req.params.rpg;
@@ -37,7 +37,7 @@ const mainController = {
       counts[dice] = counts[dice] ? counts[dice] + 1 : 1;
     }
 
-    res.render('characterPage', { rpgData, character, rpgList, dicesList, counts, username });
+    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, username });
   },
   newGamePage: (req, res) => {
     const rpg = req.params.rpg;
@@ -45,7 +45,7 @@ const mainController = {
     const characters = rpgData.characters;
     const rpgList = dataMapper.rpgList();
 
-    res.render('newGamePage', { rpg, characters, rpgData, rpgList });
+    res.render('newGamePage.ejs', { rpg, characters, rpgData, rpgList });
   },
   
   addGame: async (req, res) => {

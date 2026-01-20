@@ -19,7 +19,7 @@ const authController = {
     } else {
       const error = "Utilisateur inconnu.";
 
-      res.render('loginPage', { rpgList, error, username })
+      res.render('loginPage.ejs', { rpgList, error, username })
     }
   },
   logout: (req, res) => {
