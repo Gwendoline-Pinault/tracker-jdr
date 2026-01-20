@@ -29,4 +29,4 @@ app.listen(PORT, () => {
   console.info(`Serveur running on : http://localhost:${PORT}`);
 });
 
-export default app;
+module.exports = app;
