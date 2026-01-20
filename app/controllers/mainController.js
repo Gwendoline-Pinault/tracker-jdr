@@ -19,10 +19,8 @@ const mainController = {
       ...rpgData,
       games: orderedGamesList
     }
-    
-    const username = req.session.username;
 
-    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList, username });
+    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList });
   },
   characterPage: (req, res) => {
     const rpgSlug = req.params.rpg;
@@ -31,13 +29,12 @@ const mainController = {
     const rpgList = dataMapper.rpgList();
     const dicesList = rpgData.stats[character].dicesList.toSorted((a, b) => a - b);
     const counts = {};
-    const username = req.session.username;
 
     for (const dice of dicesList) {
       counts[dice] = counts[dice] ? counts[dice] + 1 : 1;
     }
 
-    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, username });
+    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts });
   },
   newGamePage: (req, res) => {
     const rpg = req.params.rpg;
