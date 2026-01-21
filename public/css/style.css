@@ -184,6 +184,7 @@ a {
   width: fit-content;
   color: var(--text-dark);
   text-align: center;
+  margin-bottom: 20px;
 }
 
 #character-main-page {
