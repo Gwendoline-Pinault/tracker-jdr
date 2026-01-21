@@ -1,11 +1,3 @@
-.success {
-  color: var(--green);
-}
-
-.fail {
-  color: var(--red);
-}
-
 .validation-button {
   background-color: var(--blue);
   color: var(--text-white);

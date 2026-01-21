@@ -57,7 +57,23 @@
   margin-right: 10px;
 }
 
+.ml-20 {
+  margin-left: 20px;
+}
+
 .flex-row-center {
   display: flex;
   align-items: center;
+}
+
+.flex-row-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-row-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

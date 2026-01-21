@@ -34,14 +34,34 @@
   line-height: 18px;
 }
 
+.success {
+  color: var(--green);
+}
+
+.fail {
+  color: var(--red);
+}
+
+.bg-success {
+  background-color: var(--green);
+}
+
+.bg-fail {
+  background-color: var(--red);
+}
+
+.bold {
+  font-weight: bold;
+}
+
 body {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 h1 {
@@ -145,7 +165,7 @@ a {
   height: 220px;
 }
 
-.main-row{
+.main-row {
   display: flex;
   align-items: center;
   width: 100%;
@@ -153,13 +173,51 @@ a {
   gap: 20px;
 }
 
+.main-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
 
-table {
+.dice-list-section {
+  width: fit-content;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+#character-main-page {
+  height: fit-content;
+}
+
+.table {
+  border-radius: 5px;
+  border: 2px solid var(--text-dark);
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0;
+}
+
+.table li {
+  border: 1px solid var(--text-dark);
+  text-align: center;
+  width: 33px;
+}
+
+.table li:first-child {
+  width: 112px;
+  font-weight: bold;
+}
+
+.table div {
   border: 1px solid var(--text-dark);
 }
 
-td {
-  text-align: center;
+.square {
+  width: 10px;
+  height: 10px;
 }
 
 /* 
@@ -438,7 +496,6 @@ td {
   width: 90%;
 }
 
-
 /* ------------------------------------------------
                    MEDIA 
 ---------------------------------------------------*/
@@ -512,6 +569,32 @@ td {
   #histogram {
     width: 100%;
   }
+
+  .dice-list-section {
+    width: 93%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+
+  #legend {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 401px) and (max-width: 600px){
@@ -578,6 +661,32 @@ td {
   #histogram {
     width: 100%;
   }
+
+  .dice-list-section {
+    width: 93%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+
+  #legend {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @media (min-width: 601px) and (max-width: 1000px) {
@@ -594,6 +703,7 @@ td {
   #character-main-page {
     display: flex;
     flex-direction: column;
+    height: fit-content;
   }
 
   #character-main-page section {
@@ -608,6 +718,27 @@ td {
     width: 60%;
     padding: 10px 0;
     height: fit-content;
+  }
+
+  .dice-list-section {
+    width: 90%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
   }
 }
 
@@ -637,5 +768,31 @@ td {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
     width: 100%;
+  }
+
+  .dice-list-section {
+    width: 90%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+
+    #legend {
+    display: flex;
+    flex-direction: column;
   }
 }

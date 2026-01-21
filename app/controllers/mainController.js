@@ -29,12 +29,21 @@ const mainController = {
     const rpgList = dataMapper.rpgList();
     const dicesList = rpgData.stats[character].dicesList.toSorted((a, b) => a - b);
     const counts = {};
-
+    
     for (const dice of dicesList) {
       counts[dice] = counts[dice] ? counts[dice] + 1 : 1;
     }
 
-    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts });
+    for (i = 1; i <= rpgData.diceSystem; i++) {
+      if (!counts[i]) {
+        counts[i] = 0;
+      }
+    }
+    
+    const max = Math.max(...Object.values(counts));
+    const min = Math.min(...Object.values(counts));
+
+    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max });
   },
   newGamePage: (req, res) => {
     const rpg = req.params.rpg;
