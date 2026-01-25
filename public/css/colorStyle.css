@@ -230,3 +230,22 @@
   color: var(--text-light);
   text-shadow: 2px 2px 2px var(--text-dark);
 }
+
+/* ------------------------------------------------
+              Les clés des Verrous d'Or                      
+ ------------------------------------------------ */
+.verrousdor-icon {
+  text-align: center;
+  background-image: url("/static/images/verrous.jpg"); 
+  background-position: top;
+  background-size: cover;
+ }
+
+.button-verrousdor:hover {
+  border: 2px solid var(--dark-brown);
+}
+
+.verrousdor-color {
+  background-color: var(--brown);
+  color: var(--text-light);
+}

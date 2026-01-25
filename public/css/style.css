@@ -24,6 +24,9 @@
   --button-hover: rgb(110, 110, 110);
   --red: rgb(255, 0, 0);
   --green: rgb(37, 184, 0);
+  --brown: rgb(118, 92, 43);
+  --light-brown: rgb(153, 123, 68);
+  --dark-brown: rgb(90, 71, 35);
   
   background-color: var(--bg-light);
   color: var(--text-light);

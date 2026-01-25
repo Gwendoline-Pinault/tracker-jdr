@@ -1,0 +1,31 @@
+{
+  "name": "Les Clés des Verrous d'Or",
+  "slug": "verrousdor",
+  "characters": ["Lysandrelle", "Phil", "Tharok"],
+  "diceSystem": 20,
+  "status": "En cours",
+  "stats": {
+    "Lysandrelle": {
+      "globalMedian": 0,
+      "globalAvg": 0,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": []
+    },
+    "Phil": {
+      "globalMedian": 0,
+      "globalAvg": 0,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": []
+    },
+    "Tharok": {
+      "globalMedian": 0,
+      "globalAvg": 0,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": []
+    }
+  },
+  "games": {}
+}
