@@ -249,3 +249,15 @@
   background-color: var(--brown);
   color: var(--text-light);
 }
+
+.verrousdor-article {
+  border: 1px solid var(--brown);
+  margin-bottom: 20px;
+}
+
+.verrousdor-color-title {
+  background-color: var(--brown);
+  border-radius: 3px 3px 0 0;
+  color: var(--text-light);
+  text-shadow: 2px 2px 2px var(--text-dark);
+}
