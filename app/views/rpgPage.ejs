@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 
-<%- include('partials/navigation', {rpgData, rpgList, pageTitle: rpgData.name }) %>
+<%- include('partials/navigation', {rpgData, rpgList, pageTitle: rpgData.name, username }) %>
 
 <main class="main-body-page">
   <section class="pj-recap" id="<%= rpgData.slug %>-recap-section">
@@ -13,7 +13,7 @@
 
         <!-- Détermine la couleur du texte en fonction de la valeur et du système de jeu -->
         <p class="round   
-          <%- include('partials/textColor', {diceSystem: rpgData.diceSystem, data: rpgData.stats[character].globalAvg}) %>
+          <%- include('partials/textColor', {diceSystem: rpgData.diceSystem, systemOrder: rpgData.systemOrder, data: rpgData.stats[character].globalAvg}) %>
         "> <%= rpgData.stats[character].globalAvg %> </p>
 
         <p class="dice-info"><%= rpgData.stats[character].dicesList.length %> dés</p>
@@ -32,9 +32,9 @@
   <div class="title-container">
     <h2 id="nb-games">Nombre de parties : <%= Object.keys(rpgData.games).length %> </h2>
     <!-- Bouton d'ajout de partie -->
-    <!-- <% if (rpgData.status === "En cours") { %>
+    <% if (rpgData.status === "En cours" && username) { %>
       <a href="/campagne/<%= rpgData.slug %>/nouvelle-partie" class="button button-<%= rpgData.slug %> <%= rpgData.slug %>-color ">Ajouter partie</a>
-    <% } %> -->
+    <% } %>
   </div>
   
   <section class="stats-section" id="<%= rpgData.slug %>-stats-section">
@@ -49,13 +49,13 @@
 
             <p>
               Moyenne : 
-              <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, data: game[character].average}) %>">
+              <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, systemOrder: rpgData.systemOrder, data: game[character].average}) %>">
                 <%= game[character].average %>
               </span>
             </p>
             <p>
               Médiane : 
-              <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, data: game[character].median}) %>">
+              <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, systemOrder: rpgData.systemOrder, data: game[character].median}) %>">
                 <%= game[character].median %>
               </span>
             </p>

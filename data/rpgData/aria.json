@@ -7,7 +7,8 @@
     "Melinda"
   ],
   "diceSystem": 100,
-  "status": "En cours",
+  "systemOrder": "ASC",
+  "status": "Terminée",
   "stats": {
     "Artyom": {
       "globalMedian": 49,

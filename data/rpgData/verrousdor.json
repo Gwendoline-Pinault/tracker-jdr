@@ -7,6 +7,7 @@
     "Tharok"
   ],
   "diceSystem": 20,
+  "systemOrder": "DESC",
   "status": "En cours",
   "stats": {
     "Lysandrelle": {

@@ -7,10 +7,11 @@ const mainController = {
 
     res.render('index.ejs', { rpgFilesList });
   },
-  rpgPage: (req, res) => {
+  rpgPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
     const rpgData = dataMapper.getRpgData(rpgSlug);
     const rpgList = dataMapper.rpgList();
+    const username = await req.session.username;
 
     // ordonne les parties par date décroissante (de la plus récente à la plus ancienne)
     const orderedGamesList = dataMapper.orderedGamesList(rpgData);
@@ -20,15 +21,16 @@ const mainController = {
       games: orderedGamesList
     }
 
-    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList });
+    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList, username });
   },
-  characterPage: (req, res) => {
+  characterPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
     const character = req.params.character;
     const rpgData = dataMapper.getRpgData(rpgSlug);
     const rpgList = dataMapper.rpgList();
     const dicesList = rpgData.stats[character].dicesList.toSorted((a, b) => a - b);
     const counts = {};
+    const username = await req.session.username;
     
     for (const dice of dicesList) {
       counts[dice] = counts[dice] ? counts[dice] + 1 : 1;
@@ -43,7 +45,7 @@ const mainController = {
     const max = Math.max(...Object.values(counts));
     const min = Math.min(...Object.values(counts));
 
-    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max });
+    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max, username });
   },
   newGamePage: (req, res) => {
     const rpg = req.params.rpg;
@@ -53,7 +55,6 @@ const mainController = {
 
     res.render('newGamePage.ejs', { rpg, characters, rpgData, rpgList });
   },
-  
   addGame: async (req, res) => {
     const form = await req.body;
     const rpg = req.params.rpg;
@@ -96,7 +97,7 @@ const mainController = {
       game[character].median = median;
 
       // calcule le nombre de réussites et d'échecs critiques
-      const {success, fail} = dataMapper.getCritValues(dices, rpgData.diceSystem);
+      const {success, fail} = dataMapper.getCritValues(dices, rpgData.diceSystem, rpgData.systemOrder);
       game[character].success = success;
       game[character].fail = fail;
 
@@ -117,7 +118,7 @@ const mainController = {
       // calcule les stats globales
       const globalMedian = dataMapper.calculateMedian(dicesList);
       const globalAvg = dataMapper.calculateAverage(dicesList);
-      const {success, fail} = dataMapper.getCritValues(dicesList, rpgData.diceSystem);
+      const {success, fail} = dataMapper.getCritValues(dicesList, rpgData.diceSystem, rpgData.systemOrder);
       
       // met à jour le fichier final
       gameFile.stats[character].globalAvg = globalAvg;
@@ -134,6 +135,10 @@ const mainController = {
     dataMapper.updateGameFile(gameFile, rpg);
 
     res.redirect(`/campagne/${rpg}`);
+  },
+  addNewRpg: async (req, res) => {
+    const form = await req.body;
+    res.send(form);
   }
 }
 

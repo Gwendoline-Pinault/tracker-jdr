@@ -3,6 +3,7 @@
   "slug": "goldensun",
   "characters": ["Rawiri", "Takeshi", "Tepes"],
   "diceSystem": 20,
+  "systemOrder": "DESC",
   "status": "Terminée",
   "stats": {
     "Rawiri": {

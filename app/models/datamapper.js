@@ -81,30 +81,34 @@ const dataMapper = {
    * @param {number} diceSystem valeur du dé du sytème de jeu
    * @returns {object} {success: number, fail: number} renvoie le total pour chaque type de critique
    */
-  getCritValues: (dices, diceSystem) => {
+  getCritValues: (dices, diceSystem, systemOrder) => {
     let fail = 0;
     let success = 0;
 
-    if (!diceSystem || !dices) {
+    if (!diceSystem || !dices || !systemOrder) {
       return {error: "getCritValues : Données manquantes. Vérifier les paramètres"};
     }
 
     if (diceSystem === 20) {
       dices.forEach((dice) => {
         if (dice === 1) {
-          fail++;
+          if (systemOrder === 'DESC') fail++;
+          if (systemOrder === 'ASC') success++;
         } else if (dice === 20) {
-          success++;
+          if (systemOrder === 'DESC') success++;
+          if (systemOrder === 'ASC') fail++; 
         }
       });
     } else if (diceSystem === 100) {
-      dices.forEach((dice) => {
-        if (dice <= 5) {
-          success++;
-        } else if (dice >= 96) {
-          fail++;
-        }
-      })
+      if (systemOrder === 'ASC') {
+        dices.forEach((dice) => {
+          if (dice <= 5) {
+            success++;
+          } else if (dice >= 96) {
+            fail++;
+          }
+        })
+      }
     }
 
     return {fail, success};

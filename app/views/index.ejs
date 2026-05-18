@@ -1,6 +1,8 @@
 <%- include('partials/header') %>
 
-  <h1 class="home-title">Les campagnes de JDR</h1>
+  <header class="w-full">
+    <h1 class="home-title">Les campagnes de JDR</h1>
+  </header>
 
   <% rpgFilesList.forEach(rpg => { %>
     <a href="/campagne/<%= rpg.slug %>" class="link-card">

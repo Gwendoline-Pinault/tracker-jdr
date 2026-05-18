@@ -3,6 +3,7 @@
   "slug": "pathfinder",
   "characters": ["Callum", "Elora", "Karl", "Ulric"],
   "diceSystem": 20,
+  "systemOrder": "DESC",
   "status": "Terminée",
   "stats": {
     "Callum": {

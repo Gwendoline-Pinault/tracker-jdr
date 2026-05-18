@@ -3,6 +3,7 @@
   "slug": "poudlard",
   "characters": ["Eva", "Kelly", "Michael"],
   "diceSystem": 100,
+  "systemOrder": "ASC",
   "status": "Terminée",
   "stats": {
     "Eva": {
