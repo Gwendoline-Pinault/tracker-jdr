@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const spawn = require('child_process').spawn;
 
 const dataMapper = {
   rpgFilesList: () => {
@@ -113,13 +114,33 @@ const dataMapper = {
 
     return {fail, success};
   },
+  /**
+   * Create a file that contains fileData and named "slug.json"
+   * @param {object} fileData 
+   * @param {string} slug 
+   */
+  createGameFile: (fileData, slug) => {
+    fs.writeFile(`data/rpgData/${slug}.json`, JSON.stringify(fileData, null, 2), function (err) {
+      if (err) throw err;
+    });
+    
+    console.info('File created.');
+  },
   updateGameFile: (gameFile, rpg) => {
-    fs.writeFileSync(`data/rpgData/${rpg}.json`, JSON.stringify(gameFile, null, 2));
+    fs.writeFileSync(`data/rpgData/${rpg}.json`, JSON.stringify(gameFile, null, 2), function (err) {
+      if (err) throw err;
+    });
+
+     
     
     console.info('Save updated.');
-    
-  }
+  },
+  updateHistograms: () => {
+    const histScriptPath = path.resolve('scripts/makeHist.py');
+    spawn('python', [histScriptPath]);
 
+    console.log('Histograms updated.');
+  }
 }
 
 module.exports = dataMapper;

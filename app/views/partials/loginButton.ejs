@@ -2,7 +2,9 @@
   <p class="black flex-row-center">
     <img class="img-icon-bg mr-5" src="/static/images/circle-user.svg" alt="Connecté">
     <b class="mr-5"><%= username.slice(0,2) %></b>
-    <a href="/logout" class="icon nav-icon"><img src="/static/images/logout.png" alt="[->" class="img-icon"></a>
+    <a href="/logout" class="icon nav-icon">
+      <img src="/static/images/logout.png" alt="[->" class="img-icon">
+    </a>
   </p>
 <% } else { %>
   <a href="/connexion" class="icon nav-icon <%= slug %>-color"><img src="/static/images/login-icon.svg" class="img-icon" alt="->]"/></a>

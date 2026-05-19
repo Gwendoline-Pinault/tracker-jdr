@@ -33,9 +33,9 @@ const authController = {
     const password = req.session.password;
 
     if (username === process.env.IDENTIFIANT && password === process.env.PASSWORD) {
-      res.send(true);
+      return true;
     } else {
-      res.send(false);
+      return false;
     }
   }
 }

@@ -1,0 +1,131 @@
+{
+  "name": "La dernière pluie",
+  "slug": "dernierepluie",
+  "characters": [
+    "Anthony",
+    "Clarissa",
+    "Ethan",
+    "Jay"
+  ],
+  "diceSystem": 20,
+  "systemOrder": "ASC",
+  "status": "En cours",
+  "stats": {
+    "Anthony": {
+      "globalMedian": 8,
+      "globalAvg": 11,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": [
+        2,
+        8,
+        8,
+        17,
+        18
+      ]
+    },
+    "Clarissa": {
+      "globalMedian": 12,
+      "globalAvg": 13,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": [
+        8,
+        10,
+        12,
+        14,
+        19
+      ]
+    },
+    "Ethan": {
+      "globalMedian": 7,
+      "globalAvg": 9,
+      "globalSuccess": 2,
+      "globalFail": 1,
+      "dicesList": [
+        1,
+        1,
+        2,
+        6,
+        7,
+        8,
+        16,
+        18,
+        20
+      ]
+    },
+    "Jay": {
+      "globalMedian": 17,
+      "globalAvg": 15,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": [
+        6,
+        15,
+        17,
+        18,
+        19
+      ]
+    }
+  },
+  "games": {
+    "15/05/2026": {
+      "Anthony": {
+        "dices": [
+          2,
+          18,
+          8,
+          8,
+          17
+        ],
+        "average": 11,
+        "median": 8,
+        "success": 0,
+        "fail": 0
+      },
+      "Clarissa": {
+        "dices": [
+          10,
+          14,
+          12,
+          19,
+          8
+        ],
+        "average": 13,
+        "median": 12,
+        "success": 0,
+        "fail": 0
+      },
+      "Ethan": {
+        "dices": [
+          18,
+          7,
+          8,
+          1,
+          16,
+          20,
+          6,
+          2,
+          1
+        ],
+        "average": 9,
+        "median": 7,
+        "success": 2,
+        "fail": 1
+      },
+      "Jay": {
+        "dices": [
+          17,
+          6,
+          18,
+          19,
+          15
+        ],
+        "average": 15,
+        "median": 17,
+        "success": 0,
+        "fail": 0
+      }
+    }
+  }
+}

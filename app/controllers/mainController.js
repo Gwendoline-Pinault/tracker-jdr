@@ -1,11 +1,13 @@
 require('dotenv').config();
 const dataMapper = require('../models/datamapper');
+const authController = require('./authController');
 
 const mainController = {
   home: (req, res) => {
     const rpgFilesList = dataMapper.rpgFilesList();
+    const username = req.session.username;
 
-    res.render('index.ejs', { rpgFilesList });
+    res.render('index.ejs', { rpgFilesList, username });
   },
   rpgPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
@@ -52,8 +54,9 @@ const mainController = {
     const rpgData = dataMapper.getRpgData(rpg);
     const characters = rpgData.characters;
     const rpgList = dataMapper.rpgList();
+    const username = req.session.username;
 
-    res.render('newGamePage.ejs', { rpg, characters, rpgData, rpgList });
+    res.render('newGamePage.ejs', { rpg, characters, rpgData, rpgList, username });
   },
   addGame: async (req, res) => {
     const form = await req.body;
@@ -136,9 +139,44 @@ const mainController = {
 
     res.redirect(`/campagne/${rpg}`);
   },
+  newCampaignPage: async (req, res) => {
+    const username = await req.session.username;
+
+    if (username === process.env.IDENTIFIANT) {
+      res.render('newCampaignPage', { username });
+
+    } else {
+      res.redirect('/');
+    }
+  },
   addNewRpg: async (req, res) => {
     const form = await req.body;
-    res.send(form);
+    const charactersArray = form.characters.split(", ");
+
+    // new campaign file
+    let campaignData = {...form, 
+      diceSystem: parseInt(form.diceSystem, 10), 
+      characters: charactersArray,
+      status: "En cours",
+      stats: {},
+      games: {}
+    };
+
+    charactersArray.map(character => {
+      campaignData.stats[character] = {
+        globalMedian: 0,
+        globalAvg: 0,
+        globalSuccess: 0,
+        globalFail: 0,
+        dicesList: []
+      };
+    });
+
+    console.log(campaignData);
+
+    dataMapper.createGameFile(campaignData, form.slug);
+
+    res.redirect('/');
   }
 }
 

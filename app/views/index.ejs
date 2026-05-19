@@ -1,7 +1,15 @@
 <%- include('partials/header') %>
 
-  <header class="w-full">
-    <h1 class="home-title">Les campagnes de JDR</h1>
+  <header class="w-full grid grid-cols-4 gap-4 items-center sticky top-0 bg-sky-50 py-2">
+    <div class="flex justify-end">
+      <% if (username) { %>
+        <a href="/nouvelle-campagne" class="bold button default-color w-fit">Nouvelle campagne</a>
+      <% } %>
+    </div>
+    <h1 class="home-title col-span-2">Les campagnes de JDR</h1>
+    <div>
+      <%- include('partials/loginButton', {username, slug: "none"}) %>
+    </div>
   </header>
 
   <% rpgFilesList.forEach(rpg => { %>

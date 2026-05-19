@@ -19,24 +19,33 @@
   background-color: var(--blue);
 }
 
+.none-color {
+  background-color: transparent;
+}
+
+/* BASE COMMUNE */
+.aria-icon, .pathfinder-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon {
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+ }
+
+.aria-color-article, .pathfinder-color-article, .poudlard-color-article, .goldensun-color-article, .verrousdor-color-article .dernierepluie-color-article {
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
 /* ------------------------------------------------
                       ARIA                      
  ------------------------------------------------ */
 .aria-icon {
-  text-align: center;
   background-image: url("/static/images/aria.png");
-  background-position: center;
-  background-size: cover;
 }
 
 .aria-btn:hover {
   box-shadow: inset 0 0 5px var(--medium-orange);
-}
-
-.aria-article {
-  padding: 5px 10px;
-  border-radius: 10px;
-  text-decoration: none;
 }
 
 .button-aria:hover {
@@ -80,10 +89,7 @@
  ------------------------------------------------ */
 
 .goldensun-icon {
-  text-align: center;
   background-image: url("/static/images/goldensun.png"); 
-  background-position: center;
-  background-size: cover;
 }
 
 .goldensun-btn:hover {
@@ -92,12 +98,6 @@
 
 .button-goldensun:hover {
   border: 2px solid var(--golden);
-}
-
-.goldensun-article {
-  padding: 5px 10px;
-  border-radius: 10px;
-  text-decoration: none;
 }
 
 .goldensun-color {
@@ -136,10 +136,7 @@
  ------------------------------------------------ */
 
 .poudlard-icon {
-  text-align: center;
   background-image: url("/static/images/poudlard.png"); 
-  background-position: center;
-  background-size: cover;
 }
 
 .poudlard-btn:hover {
@@ -186,10 +183,7 @@
  ------------------------------------------------ */
 
 .pathfinder-icon {
-  text-align: center;
   background-image: url("/static/images/pathfinder.png"); 
-  background-position: center;
-  background-size: cover;
 }
 
 .pathfinder-btn:hover {
@@ -221,7 +215,6 @@
 
 .pathfinder-article {
   border: 1px solid var(--dark-purple);
-  margin-bottom: 20px;
 }
 
 .pathfinder-color-title {
@@ -235,10 +228,8 @@
               Les clés des Verrous d'Or                      
  ------------------------------------------------ */
 .verrousdor-icon {
-  text-align: center;
   background-image: url("/static/images/verrous.jpg"); 
   background-position: top;
-  background-size: cover;
  }
 
 .button-verrousdor:hover {
@@ -252,11 +243,44 @@
 
 .verrousdor-article {
   border: 1px solid var(--brown);
-  margin-bottom: 20px;
 }
 
 .verrousdor-color-title {
   background-color: var(--brown);
+  border-radius: 3px 3px 0 0;
+  color: var(--text-light);
+  text-shadow: 2px 2px 2px var(--text-dark);
+}
+
+/* ------------------------------------------------
+              La Dernière pluie                      
+ ------------------------------------------------ */
+.dernierepluie-icon {
+  background-image: url("/static/images/dernierepluie.png");
+  background-position: center;
+ }
+
+.button-submit-dernierepluie {
+  background-color: var(--dernierepluie-hover);
+  margin-top: 5px;
+}
+
+.button-dernierepluie:hover {
+  border: 2px solid var(--dernierepluie-hover);
+}
+
+.dernierepluie-color {
+  background-color: var(--dernierepluie);
+  color: var(--text-light);
+}
+
+.dernierepluie-article {
+  border: 1px solid var(--dernierepluie);
+  margin-bottom: 20px;
+}
+
+.dernierepluie-color-title {
+  background-color: var(--dernierepluie);
   border-radius: 3px 3px 0 0;
   color: var(--text-light);
   text-shadow: 2px 2px 2px var(--text-dark);

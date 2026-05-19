@@ -3,7 +3,7 @@ import os
 from matplotlib import ticker as loc
 
 path = os.path.abspath(__file__)
-imgPath = path.replace("scripts\\functions\\histogram.py", "public\\images\\")
+imgPath = path.replace("scripts\\functions\\histogram.py", "public\\images\\histograms\\")
 
 
 def makeHistogram(dicesList: list, character: str, nb: int):

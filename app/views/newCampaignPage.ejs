@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+<section class="nav-section">
+    <nav class="navbar default-color">
+      <a href="/" class="nav-item default-hover">Retour à l'accueil</a>
+    </nav>
+  </section>
+
+<h1 class="title bg-title">Créer une nouvelle campagne</h1>
+
+<form action="/nouvelle-campagne" method="post" class="login-form w-2/3">
+  <label for="campaignName">Nom de la campagne</label>
+  <input type="text" name="name" id="campaignName">
+
+  <label for="campaignSlug">Mot-clé</label>
+  <input type="text" name="slug" id="campaignSlug">
+
+  <label for="characters">Nom des personnages</label>
+  <input type="text" name="characters" id="characters">
+
+  <label for="diceSystem">Valeur du dé</label>
+  <input type="number" name="diceSystem" id="diceSystem">
+
+
+  <label>Système de critique</label>
+  <div class="p-2 w-2/3 flex w-[90%]">
+    <div class="radio-div">
+      <input type="radio" name="systemOrder" id="DESC" value="DESC">
+      <label for="DESC">Système classique (DND)</label>
+    </div>
+    <div class="radio-div">
+      <input type="radio" name="systemOrder" id="ASC" value="ASC">
+      <label for="ASC">Système inversé</label>
+    </div>
+  </div>
+
+  <button type="submit" class="button default-color mt-5">Valider</button>
+</form>
+
+<%- include('partials/footer') %>
