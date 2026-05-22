@@ -1,21 +1,23 @@
 <%- include('partials/header') %>
 
-  <header class="w-full grid grid-cols-4 gap-4 items-center sticky top-0 bg-default py-2">
-    <div class="flex justify-end">
+  <main class="homepage__main">
+    <header class="homepage__main-header">
       <% if (username) { %>
-        <a href="/nouvelle-campagne" class="bold button default-color w-fit">Nouvelle campagne</a>
+        <a href="/nouvelle-campagne" class="button bg-primary">+</a>
       <% } %>
-    </div>
-    <h1 class="home-title col-span-2">Les campagnes de JDR</h1>
-    <div>
-      <%- include('partials/loginButton', {username, slug: "none"}) %>
-    </div>
-  </header>
 
-  <% rpgFilesList.forEach(rpg => { %>
-    <a href="/campagne/<%= rpg.slug %>" class="link-card">
-      <h2 class="<%= rpg.slug %>-icon rpg-card bold text-xl lg:text-3xl"><%= rpg.name %></h2>
-    </a>
-  <% }); %>
+      <h1 class="homepage__main-header_title">Les campagnes</h1>
+      
+      <%- include('partials/loginButton', {username, slug: "bg-light"}) %>
+    </header>
+
+    <section class="homepage__main-section">
+      <% rpgFilesList.forEach(rpg => { %>
+        <a href="/campagne/<%= rpg.slug %>" class="link-card">
+          <h2 class="<%= rpg.slug %>-icon rpg-card bold text-xl lg:text-3xl"><%= rpg.name %></h2>
+        </a>
+      <% }); %>
+    </section>
+  </main>
 
 <%- include('partials/footer') %>

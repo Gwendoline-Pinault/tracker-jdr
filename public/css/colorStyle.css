@@ -1,26 +1,59 @@
 .validation-button {
-  background-color: var(--blue);
-  color: var(--text-white);
+  background-color: var(--primary);
+  color: var(--text-light);
   font-weight: bold;
   margin-top: 10px;
 }
 
 .validation-button:hover {
-  border: 2px solid var(--dark-blue-hover);
+  border: 2px solid var(--secondary-hover);
 }
 
 .default-color {
-  background-color: var(--blue);
-  color: var(--text-white);
+  background-color: var(--secondary);
+  color: var(--text-light);
 }
 
 .default-hover:hover {
-  border: 2px solid var(--dark-blue);
-  background-color: var(--blue);
+  border: 2px solid var(--secondary-hover);
+  background-color: var(--secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+.bg-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.bg-light-color {
+  background-color: var(--bg-light);
+}
+
+.bg-light-color:hover {
+  background-color: var(--bg-light-hover);
 }
 
 .none-color {
   background-color: transparent;
+}
+
+.success {
+  color: var(--green);
+}
+
+.fail {
+  color: var(--red);
+}
+
+.bg-success {
+  background-color: var(--green);
+}
+
+.bg-fail {
+  background-color: var(--red);
 }
 
 /* BASE COMMUNE */
@@ -228,7 +261,7 @@
               Les clés des Verrous d'Or                      
  ------------------------------------------------ */
 .verrousdor-icon {
-  background-image: url("/static/images/verrous.jpg"); 
+  background-image: url("/static/images/verrousdor.png"); 
   background-position: top;
  }
 

@@ -1,63 +1,47 @@
 @import url('/static/css/genericStyle.css');
 @import url('/static/css/colorStyle.css');
-@import "tailwindcss";
 
 :root {
-  --dark-blue: rgb(27, 40, 49);
-  --dark-blue-hover: rgba(27, 40, 49, 0.8);
-  --medium-blue: rgb(67, 97, 119);
-  --medium-orange: rgb(175, 86, 62);
-  --medium-orange-hover: rgba(223, 145, 123, 0.7);
-  --dark-purple: rgb(63, 20, 133);
-  --dark-purple-hover: rgba(63, 20, 133, 0.8);
-  --violet: rgb(138, 101, 211);
-  --blue: rgb(29, 100, 154);
-  --light-blue: rgb(140, 177, 206);
-  --rose: rgb(235, 164, 145);
   --text-light: rgb(241, 249, 255);
   --text-dark: rgb(27, 27, 27);
   --bg-light: rgb(245, 251, 255);
-  --white: rgb(255, 255, 255);
-  --light-yellow: rgb(226, 192, 80);
-  --yellow: rgb(233, 194, 66);
-  --golden: rgb(161, 124, 0);
-  --dark-yellow: rgb(75, 58, 1);
+  --bg-light-hover: rgb(221, 242, 255);
   --button-hover: rgb(110, 110, 110);
+  --primary: rgb(29, 100, 154);
+  --primary-hover: rgb(45, 134, 202);
+  --secondary: rgb(27, 40, 49);
+  --secondary-hover: rgba(27, 40, 49, 0.8);
   --red: rgb(255, 0, 0);
   --green: rgb(37, 184, 0);
-  --brown: rgb(118, 92, 43);
-  --light-brown: rgb(153, 123, 68);
-  --dark-brown: rgb(90, 71, 35);
-  --dernierepluie: #25213b;
-  --dernierepluie-hover: #7963a1;
-  
-  background-color: var(--bg-light);
-  color: var(--text-light);
+
+  --aria-light: rgb(235, 164, 145);
+  --aria: rgb(175, 86, 62);
+  --aria-dark: rgba(223, 145, 123, 0.7);
+
+  --pathfinder-light: rgb(138, 101, 211);
+  --pathfinder: rgb(63, 20, 133);
+  --pathfinder-dark: rgba(63, 20, 133, 0.8);
+
+  --poudlard-light: rgb(140, 177, 206);
+  --poudlard: rgb(67, 97, 119);
+
+  --goldensun-light: rgb(226, 192, 80);
+  --goldensun: rgb(233, 194, 66);
+  --goldensun-dark: rgb(161, 124, 0);
+  --goldensun-hover: rgb(75, 58, 1);
+
+  --verrousdor-light: rgb(153, 123, 68);
+  --verrousdor: rgb(118, 92, 43);
+  --verrousdor-dark: rgb(90, 71, 35);
+
+  --dernierepluie: rgb(37, 33, 59);
+  --dernierepluie-hover: rgb(121, 99, 161);
+
   padding: 0;
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 15px;
+  font-size: 10px;
   line-height: 18px;
-}
-
-.success {
-  color: var(--green);
-}
-
-.fail {
-  color: var(--red);
-}
-
-.bg-success {
-  background-color: var(--green);
-}
-
-.bg-fail {
-  background-color: var(--red);
-}
-
-.bold {
-  font-weight: bold;
 }
 
 body {
@@ -70,9 +54,44 @@ body {
   height: 100dvh;
 }
 
-h1 {
-  font-size: 2rem;
-  font-weight: bold;
+.homepage__main {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.homepage__main-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-row: 1;
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--secondary);
+  color: var(--text-light);
+  margin-bottom: 10px;
+  height: fit-content;
+}
+
+.homepage__main-header_title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.homepage__main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  width: 100%;
 }
 
 a {
@@ -84,6 +103,33 @@ a {
   padding: 5px 10px;
   border-radius: 5px;
   border: 2px solid transparent;
+  font-weight: bold;
+  text-align: center;
+  text-wrap: wrap;
+  width: fit-content;
+}
+
+.link-card {
+  text-decoration: none;
+  color: var(--text-light);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+}
+
+.rpg-card {
+  width: 100%;
+  height: 98%;
+  border: 3px solid var(--bg-light);
+  border-radius: 10px;
+  font-size: 2.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 4px 1px 3px var(--secondary-hover);
+  margin: 0;
 }
 
 .more-info-btn {
@@ -111,27 +157,6 @@ a {
   align-items: center;
 }
 
-.home-title {
-  text-align: center;
-  padding: 20px 0;
-  background-color: var(--dark-blue);
-  border-radius: 5px;
-  /* width: 70%; */
-}
-
-.rpg-card {
-  width: 100%;
-  height: 200px;
-  border: 3px solid var(--bg-light);
-  border-radius: 10px;
-  font-size: 30px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-shadow: 4px 1px 3px var(--dark-blue);
-  margin: 0;
-}
 
 .card {
   padding: 15px;
@@ -162,14 +187,7 @@ a {
   background-color: var(--dark-blue);
 }
 
-.link-card {
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  height: 220px;
-}
+
 
 .main-row {
   display: flex;
@@ -259,27 +277,28 @@ a {
 }
 
 .nav-icon {
-  margin: 2px 0;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
   border-radius: 5px;
   border: 2px solid transparent;
-  padding: 1px;
 }
 
 .img-icon {
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
 }
 
 .img-icon-bg {
   background-color: white;
   border-radius: 100%;
-  padding: 2px;
-  width: 30px;
-  height: 30PX;
+  padding: 1px;
+  width: 25px;
+  height: 25px;
 }
 
 /* 
@@ -521,300 +540,54 @@ a {
 /* ------------------------------------------------
                    MEDIA 
 ---------------------------------------------------*/
+/* mobile landscape */
+@media (orientation: landscape) and (min-width: 600px) {
+  .homepage__main-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
 
-@media (min-width: 100px) and (max-width: 400px) {
-  .pj-recap {
-    width: 98%;
-    margin: 10px 0;
+/* tablet */
+@media (min-width: 700px) {
+  .homepage__main {
+    padding: 20px;
   }
 
-  .pj-recap article {
-    margin: 0 2px;
+  .homepage__main-header {
+    padding: 20px;
+    font-size: 20px;
   }
 
-  .round {
-    min-width: 30px;
-    min-height: 30px;
+  .homepage__main-header_title {
+    font-size: 2em;
   }
 
   .link-card {
-    width: 90%;
-    height: 160px;
-  }
-
-  .card {
-    height: 150px;
+    height: 220px;
   }
 
   .rpg-card {
-    height: 160px;
+    font-size: 3em;
+  }
+}
+
+/* desktop */
+@media (min-width: 1200px) {
+  .homepage__main {
+    padding: 30px;
   }
 
-  .home-title {
-    width: 90%;
-    padding: 10px 0;
+  .homepage__main-header {
+    margin-bottom: 30px;
+    width: 80%;
   }
 
-  .title {
-    height: 50px;
-  }
-
-  .pj-recap h3 {
-    margin-top: 35px;
-  }
-
-  .navbar {
+  .homepage__main-section {
+    width: 80%;
+    gap: 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
-  }
-
-  #character-main-page {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #character-main-page section {
-    width: 95%;
-  }
-
-  #character-main-page h2 {
-    text-align: center;
-  }
-
-  #character-main-page article {
-    width: 95%;
-    padding: 10px 0;
-    height: fit-content;
-  }
-
-  #histogram {
-    width: 100%;
-  }
-
-  .dice-list-section {
-    width: 93%;
-  }
-
-  .table {
-    border: none;
-  }
-
-  .table li {
-    border: none;
-  }
-
-  .table li:first-child {
-    background-color: transparent;
-    color: var(--text-dark);
-  }
-
-  .table h4 {
-    font-weight: bold;
-  }
-
-  #legend {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (min-width: 401px) and (max-width: 600px){
-
-  .pj-recap {
-    padding: 0 5px;
-    width: 100%;
-  }
-
-  .link-card {
-    width: 90%;
-    height: 200px;
-  }
-
-  .card {
-    height: 180px;
-  }
-
-  .pj-recap article {
-    margin: 0 5px;
-  }
-
-  .stats-section p, .pj-recap p {
-    font-size: 14px;
-  }
-
-  #nb-games {
-    font-size: 1.2rem;
-  }
-
-  .home-title {
-    width: 90%;
-  }
-
-  .pj-recap h3 {
-    margin-top: 0;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  #character-main-page {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #character-main-page section {
-    width: 95%;
-  }
-
-  #character-main-page h2 {
-    text-align: center;
-  }
-
-  #character-main-page article {
-    width: 90%;
-    padding: 10px 0;
-    height: fit-content;
-  }
-
-  #histogram {
-    width: 100%;
-  }
-
-  .dice-list-section {
-    width: 93%;
-  }
-
-  .table {
-    border: none;
-  }
-
-  .table li {
-    border: none;
-  }
-
-  .table li:first-child {
-    background-color: transparent;
-    color: var(--text-dark);
-  }
-
-  .table h4 {
-    font-weight: bold;
-  }
-
-  #legend {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1000px) {
-  .pj-recap {
-    width: 90%;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  #character-main-page {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-  }
-
-  #character-main-page section {
-    width: 95%;
-  }
-
-  #character-main-page h2 {
-    text-align: center;
-  }
-
-  #character-main-page article {
-    width: 60%;
-    padding: 10px 0;
-    height: fit-content;
-  }
-
-  .dice-list-section {
-    width: 90%;
-  }
-
-  .table {
-    border: none;
-  }
-
-  .table li {
-    border: none;
-  }
-
-  .table li:first-child {
-    background-color: transparent;
-    color: var(--text-dark);
-  }
-
-  .table h4 {
-    font-weight: bold;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 450px) {
-  .title {
-    height: 50px;
-  }
-
-  .pj-recap {
-    margin: 10px 0;
-  }
-
-  .pj-recap h3 {
-    margin-top: 0;
-  }
-
-  .pj-recap-crit {
-    margin: 5px;
-  }
-
-  .pj-recap-crit p:first-child {
-    margin-bottom: 5px;
-  }
-
-  .navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
-    width: 100%;
-  }
-
-  .dice-list-section {
-    width: 90%;
-  }
-
-  .table {
-    border: none;
-  }
-
-  .table li {
-    border: none;
-  }
-
-  .table li:first-child {
-    background-color: transparent;
-    color: var(--text-dark);
-  }
-
-  .table h4 {
-    font-weight: bold;
-  }
-
-    #legend {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -1,0 +1,297 @@
+
+/* @media (min-width: 100px) and (max-width: 400px) {
+  .pj-recap {
+    width: 98%;
+    margin: 10px 0;
+  }
+
+  .pj-recap article {
+    margin: 0 2px;
+  }
+
+  .round {
+    min-width: 30px;
+    min-height: 30px;
+  }
+
+  .link-card {
+    width: 90%;
+    height: 160px;
+  }
+
+  .card {
+    height: 150px;
+  }
+
+  .rpg-card {
+    height: 160px;
+  }
+
+  .home-title {
+    width: 90%;
+    padding: 10px 0;
+  }
+
+  .title {
+    height: 50px;
+  }
+
+  .pj-recap h3 {
+    margin-top: 35px;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+  }
+
+  #character-main-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #character-main-page section {
+    width: 95%;
+  }
+
+  #character-main-page h2 {
+    text-align: center;
+  }
+
+  #character-main-page article {
+    width: 95%;
+    padding: 10px 0;
+    height: fit-content;
+  }
+
+  #histogram {
+    width: 100%;
+  }
+
+  .dice-list-section {
+    width: 93%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+
+  #legend {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 401px) and (max-width: 600px){
+
+  .pj-recap {
+    padding: 0 5px;
+    width: 100%;
+  }
+
+  .link-card {
+    width: 90%;
+    height: 200px;
+  }
+
+  .card {
+    height: 180px;
+  }
+
+  .pj-recap article {
+    margin: 0 5px;
+  }
+
+  .stats-section p, .pj-recap p {
+    font-size: 14px;
+  }
+
+  #nb-games {
+    font-size: 1.2rem;
+  }
+
+  .home-title {
+    width: 90%;
+  }
+
+  .pj-recap h3 {
+    margin-top: 0;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #character-main-page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #character-main-page section {
+    width: 95%;
+  }
+
+  #character-main-page h2 {
+    text-align: center;
+  }
+
+  #character-main-page article {
+    width: 90%;
+    padding: 10px 0;
+    height: fit-content;
+  }
+
+  #histogram {
+    width: 100%;
+  }
+
+  .dice-list-section {
+    width: 93%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+
+  #legend {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .pj-recap {
+    width: 90%;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  #character-main-page {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  #character-main-page section {
+    width: 95%;
+  }
+
+  #character-main-page h2 {
+    text-align: center;
+  }
+
+  #character-main-page article {
+    width: 60%;
+    padding: 10px 0;
+    height: fit-content;
+  }
+
+  .dice-list-section {
+    width: 90%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 450px) {
+  .title {
+    height: 50px;
+  }
+
+  .pj-recap {
+    margin: 10px 0;
+  }
+
+  .pj-recap h3 {
+    margin-top: 0;
+  }
+
+  .pj-recap-crit {
+    margin: 5px;
+  }
+
+  .pj-recap-crit p:first-child {
+    margin-bottom: 5px;
+  }
+
+  .navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .dice-list-section {
+    width: 90%;
+  }
+
+  .table {
+    border: none;
+  }
+
+  .table li {
+    border: none;
+  }
+
+  .table li:first-child {
+    background-color: transparent;
+    color: var(--text-dark);
+  }
+
+  .table h4 {
+    font-weight: bold;
+  }
+
+    #legend {
+    display: flex;
+    flex-direction: column;
+  }
+} */

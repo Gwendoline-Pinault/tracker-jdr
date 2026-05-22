@@ -1,11 +1,12 @@
 <% if (username) { %>
-  <p class="black flex-row-center">
-    <img class="img-icon-bg mr-5" src="/static/images/circle-user.svg" alt="Connecté">
-    <b class="mr-5"><%= username.slice(0,2) %></b>
-    <a href="/logout" class="icon nav-icon">
+  <div class="flex-row-center">
+    <img class="img-icon-bg" src="/static/images/circle-user.svg" alt="Connecté">
+    <a href="/logout" class="icon nav-icon <%= slug %>-color">
       <img src="/static/images/logout.png" alt="[->" class="img-icon">
     </a>
-  </p>
+  </div>
 <% } else { %>
-  <a href="/connexion" class="icon nav-icon <%= slug %>-color"><img src="/static/images/login-icon.svg" class="img-icon" alt="->]"/></a>
+  <a href="/connexion" class="icon nav-icon <%= slug %>-color">
+    <img src="/static/images/login-icon.svg" class="img-icon" alt="->]"/>
+  </a>
 <% } %>

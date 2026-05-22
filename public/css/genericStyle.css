@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .black {
   color: var(--text-dark);
 }
@@ -28,10 +32,6 @@
 
 .w70 {
   width: 70%;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .relative {
@@ -68,6 +68,7 @@
 .flex-row-center {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
 .flex-row-between {
