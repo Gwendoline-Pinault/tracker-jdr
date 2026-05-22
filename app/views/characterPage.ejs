@@ -2,44 +2,44 @@
 <%- include('partials/navigation', {rpgData, rpgList, pageTitle: character, username }) %>
 
 <main class="main-col">
-  <div class="main-row mb-20" id="character-main-page">
+  <div class="main-row mb-20 mt-5" id="character-main-page">
     <section class="col-section w30 mb-20">
-      <h2 class="black">Statistiques globales</h2>
-      <article class="<%= rpgData.slug %>-color card w60">
-        <p><b>Moyenne globale :</b> <%= rpgData.stats[character].globalAvg %></p>
+      <h2 class="text-2xl bold black mb-2">Statistiques globales</h2>
+      <article class="<%= rpgData.slug %>-color card w60 gap-4">
+        <p class="mt-4"><b>Moyenne globale :</b> <%= rpgData.stats[character].globalAvg %></p>
         <p><b>Médiane globale :</b> <%= rpgData.stats[character].globalMedian %></p>
         <p><b>Réussites critiques :</b> <%= rpgData.stats[character].globalSuccess %></p>
-        <p><b>Échecs critiques : </b><%= rpgData.stats[character].globalFail %></p>
+        <p class="mb-4"><b>Échecs critiques : </b><%= rpgData.stats[character].globalFail %></p>
       </article>
     </section>
     
     <section class="col-section black w70">
-      <h2 class="black">Histogramme des dés de la campagne</h2>
-      <img src="/static/images/histograms/hist-<%= character %>.png" alt="" id="histogram">
+      <h2 class="text-2xl bold black mb-2">Histogramme des dés de la campagne</h2>
+      <img src="/static/images/histograms/hist-<%= character %>.png" alt="Histogramme des dés non disponible" id="histogram">
       <legend>La ligne rouge représente les statistiques attendues selon les probabilités</legend>
     </section>
   </div>
 
   <section class="dice-list-section">
-    <h2>Liste détaillée des dés</h2>
+    <h2 class="text-2xl bold my-4">Liste détaillée des dés</h2>
   
-    <ul class="table">
+    <ul class="table mb-4">
       <li class="<%= rpgData.slug %>-color">
-        <h4>Valeur du dé</h4>
+        <h4 class="py-3">Valeur du dé</h4>
         <div></div>
-        <p>Occurrences</p>
+        <p class="py-3">Occurrences</p>
       </li>
       <% for (const [dice, occ] of Object.entries(counts)) { %>
         <% if (dice < 51) { %>
           <li>
-            <h4><%= dice %></h4>
+            <h4 class="py-3"><%= dice %></h4>
             <div></div>
             <% if (occ === min) { %>
-              <p class="success bold"><%= occ %></p>
+              <p class="success bold py-3"><%= occ %></p>
             <% } else if (occ === max) { %>
-              <p class="fail bold"><%= occ %></p>
+              <p class="fail bold py-3"><%= occ %></p>
             <% } else { %>
-              <p><%= occ %></p>
+              <p class="py-3"><%= occ %></p>
             <% } %>
           </li>
         <% } %>

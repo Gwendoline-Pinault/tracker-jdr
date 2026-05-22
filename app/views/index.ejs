@@ -1,6 +1,6 @@
 <%- include('partials/header') %>
 
-  <header class="w-full grid grid-cols-4 gap-4 items-center sticky top-0 bg-sky-50 py-2">
+  <header class="w-full grid grid-cols-4 gap-4 items-center sticky top-0 bg-default py-2">
     <div class="flex justify-end">
       <% if (username) { %>
         <a href="/nouvelle-campagne" class="bold button default-color w-fit">Nouvelle campagne</a>
@@ -14,7 +14,7 @@
 
   <% rpgFilesList.forEach(rpg => { %>
     <a href="/campagne/<%= rpg.slug %>" class="link-card">
-      <h2 class="<%= rpg.slug %>-icon rpg-card"><%= rpg.name %></h2>
+      <h2 class="<%= rpg.slug %>-icon rpg-card bold text-xl lg:text-3xl"><%= rpg.name %></h2>
     </a>
   <% }); %>
 

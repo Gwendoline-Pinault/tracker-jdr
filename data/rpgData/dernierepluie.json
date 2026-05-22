@@ -13,11 +13,13 @@
   "stats": {
     "Anthony": {
       "globalMedian": 8,
-      "globalAvg": 11,
+      "globalAvg": 9,
       "globalSuccess": 0,
       "globalFail": 0,
       "dicesList": [
         2,
+        5,
+        8,
         8,
         8,
         17,
@@ -73,12 +75,14 @@
       "Anthony": {
         "dices": [
           2,
+          8,
           18,
           8,
           8,
-          17
+          17,
+          5
         ],
-        "average": 11,
+        "average": 9,
         "median": 8,
         "success": 0,
         "fail": 0

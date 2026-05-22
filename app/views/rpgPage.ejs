@@ -9,7 +9,7 @@
       <article id="<%= character %>" class="<%= rpgData.slug %>-color relative">
         <a href="/campagne/<%= rpgData.slug %>/details/<%= character %>" type="button" class="more-info-btn button-<%= rpgData.slug %>">+</a>
 
-        <h3><%= character %></h3>
+        <h3 class="bold"><%= character %></h3>
 
         <!-- Détermine la couleur du texte en fonction de la valeur et du système de jeu -->
         <p class="round   
@@ -41,10 +41,10 @@
     <!-- Liste des parties -->
     <% for (const [date, game] of Object.entries(rpgData.games)) { %>
       <article class="<%= rpgData.slug %>-article" id="<%= date %>">
-        <h3 class="<%= rpgData.slug %>-color-title">Partie du <%= date %></h3>
+        <h3 class="<%= rpgData.slug %>-color-title bold">Partie du <%= date %></h3>
         <% rpgData.characters.forEach(character => { %>
           <div>
-            <h4><%= character %></h4>
+            <h4 class="bold"><%= character %></h4>
             <p>Dés lancés : <%= game[character].dices.length %></p>
 
             <p>

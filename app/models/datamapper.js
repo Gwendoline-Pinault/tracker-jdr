@@ -131,8 +131,6 @@ const dataMapper = {
       if (err) throw err;
     });
 
-     
-    
     console.info('Save updated.');
   },
   updateHistograms: () => {

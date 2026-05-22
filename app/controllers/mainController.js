@@ -136,6 +136,7 @@ const mainController = {
     }
 
     dataMapper.updateGameFile(gameFile, rpg);
+    dataMapper.updateHistograms();
 
     res.redirect(`/campagne/${rpg}`);
   },
@@ -171,8 +172,6 @@ const mainController = {
         dicesList: []
       };
     });
-
-    console.log(campaignData);
 
     dataMapper.createGameFile(campaignData, form.slug);
 
