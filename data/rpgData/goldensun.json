@@ -1,5 +1,6 @@
 {
   "name": "Golden Sun",
+  "shortName": "Golden Sun",
   "slug": "goldensun",
   "characters": ["Rawiri", "Takeshi", "Tepes"],
   "diceSystem": 20,

@@ -1,5 +1,6 @@
 {
   "name": "Poudlard",
+  "shortName": "Poudlard",
   "slug": "poudlard",
   "characters": ["Eva", "Kelly", "Michael"],
   "diceSystem": 100,

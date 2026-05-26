@@ -22,6 +22,7 @@ const dataMapper = {
     rpgFilesList.forEach((file) => {
       rpgList.push({
         name: file.name,
+        shortName: file.shortName,
         slug: file.slug
       });
     });

@@ -10,6 +10,10 @@
   color: var(--text-dark);
 }
 
+.text-center {
+  text-align: center;
+}
+
 .w20 {
   width: 20%;
 }

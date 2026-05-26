@@ -1,6 +1,7 @@
 {
-  "name": "Pathfinder",
-  "slug": "pathfinder",
+  "name": "La Colère des Justes",
+  "shortName": "Colère des Justes",
+  "slug": "coleredesjustes",
   "characters": ["Callum", "Elora", "Karl", "Ulric"],
   "diceSystem": 20,
   "systemOrder": "DESC",

@@ -57,16 +57,14 @@
 }
 
 /* BASE COMMUNE */
-.aria-icon, .pathfinder-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon {
+.aria-icon, .coleredesjustes-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon {
   text-align: center;
   background-position: center;
   background-size: cover;
  }
 
-.aria-color-article, .pathfinder-color-article, .poudlard-color-article, .goldensun-color-article, .verrousdor-color-article .dernierepluie-color-article {
-  margin-bottom: 20px;
-  padding: 5px 10px;
-  border-radius: 10px;
+.aria-article, .coleredesjustes-article, .poudlard-article, .goldensun-article, .verrousdor-article .dernierepluie-article {
+  border-radius: 5px;
   text-decoration: none;
 }
 
@@ -78,41 +76,38 @@
 }
 
 .aria-btn:hover {
-  box-shadow: inset 0 0 5px var(--medium-orange);
+  box-shadow: inset 0 0 5px var(--aria);
 }
 
 .button-aria:hover {
-  border: 2px solid var(--medium-orange);
+  border: 2px solid var(--aria);
 }
 
 .aria-color {
-  background-color: var(--rose);
+  background-color: var(--aria-light);
   color: var(--text-dark);
 }
 
 .aria-hover {
-  box-shadow: 0 0 10px 6px var(--medium-orange-hover);
-  background-color: var(--medium-orange-hover);
+  box-shadow: 0 0 10px 6px var(--aria-dark);
+  background-color: var(--aria-dark);
 }
 
 .aria-hover:hover {
-  box-shadow: 0 0 10px 5px var(--medium-orange);
+  box-shadow: 0 0 10px 5px var(--aria-dark);
 }
 
 .aria-button {
-  background-color: var(--medium-orange);
+  background-color: var(--aria);
   color: var(--text-light);
 }
 
 .aria-color-title {
-  background-color: var(--medium-orange);
-  color: var(--text-light);
-  border-radius: 3px 3px 0 0;
-  text-shadow: 2px 2px 2px var(--text-dark);
+  background-color: var(--aria);
 }
 
 .aria-article {
-  border: 1px solid var(--medium-orange);
+  border: 1px solid var(--aria);
   margin-bottom: 20px;
 }
 
@@ -126,41 +121,38 @@
 }
 
 .goldensun-btn:hover {
-  box-shadow: inset 0 0 5px var(--golden);
+  box-shadow: inset 0 0 5px var(--goldensun-dark);
 }
 
 .button-goldensun:hover {
-  border: 2px solid var(--golden);
+  border: 2px solid var(--goldensun-dark);
 }
 
 .goldensun-color {
-  background-color: var(--yellow);
+  background-color: var(--goldensun);
   color: var(--text-dark);
 }
 
 .goldensun-hover {
-  box-shadow: 0 0 10px 6px var(--golden);
-  background-color: var(--yellow);
+  box-shadow: 0 0 10px 6px var(--goldensun-hover);
+  background-color: var(--goldensun);
 }
 
 .goldensun-hover:hover {
-  box-shadow: 0 0 10px 5px var(--yellow);
+  box-shadow: 0 0 10px 5px var(--goldensun);
 }
 
 .goldensun-button {
-  background-color: var(--golden);
-  color: var(--light-red);
+  background-color: var(--goldensun);
+  color: var(--text-dark);
 }
 
 .goldensun-color-title {
-  background-color: var(--yellow);
-  color: var(--white);
-  border-radius: 3px 3px 0 0;
-  text-shadow: 2px 2px 2px var(--dark-yellow);
+  background-color: var(--goldensun);
 }
 
 .goldensun-article {
-  border: 1px solid var(--dark-yellow);
+  border: 1px solid var(--goldensun-dark);
   margin-bottom: 20px;
 }
 
@@ -173,88 +165,82 @@
 }
 
 .poudlard-btn:hover {
-  box-shadow: inset 0 0 5px var(--dark-blue);
+  box-shadow: inset 0 0 5px var(--poudlard);
 }
 
 .button-poudlard:hover {
-  border: 2px solid var(--dark-blue);
+  border: 2px solid var(--poudlard-light);
 }
 
 .poudlard-color {
-  background-color: var(--medium-blue);
+  background-color: var(--poudlard);
   color: var(--text-light);
 }
 
 .poudlard-hover {
-  box-shadow: 0 0 10px 6px var(--dark-blue-hover);
-  background-color: var(--dark-blue-hover);
+  box-shadow: 0 0 10px 6px var(--poudlard);
+  background-color: var(--poudlard);
 }
 
 .poudlard-hover:hover {
-  box-shadow: 0 0 10px 5px var(--blue);
+  box-shadow: 0 0 10px 5px var(--secondary);
 }
 
 .poudlard-button {
-  background-color: var(--dark-blue);
+  background-color: var(--poudlard);
   color: var(--text-light);
 }
 
 .poudlard-article {
-  border: 1px solid var(--medium-blue);
+  border: 1px solid var(--poudlard);
   margin-bottom: 20px;
 }
 
 .poudlard-color-title {
-  background-color: var(--medium-blue);
-  border-radius: 3px 3px 0 0;
-  color: var(--text-light);
-  text-shadow: 2px 2px 2px var(--text-dark);
+  background-color: var(--poudlard);
 }
 
 /* ------------------------------------------------
-                      PATHFINDER                      
+                      coleredesjustes                      
  ------------------------------------------------ */
 
-.pathfinder-icon {
-  background-image: url("/static/images/pathfinder.png"); 
+.coleredesjustes-icon {
+  background-image: url("/static/images/coleredesjustes.png"); 
 }
 
-.pathfinder-btn:hover {
-  box-shadow: inset 0 0 5px var(--dark-purple);
+.coleredesjustes-btn:hover {
+  box-shadow: inset 0 0 5px var(--coleredesjustes);
 }
 
-.button-pathfinder:hover {
-  border: 2px solid var(--dark-purple);
+.button-coleredesjustes:hover {
+  border: 2px solid var(--coleredesjustes);
 }
 
-.pathfinder-color {
-  background-color: var(--violet);
+.coleredesjustes-color {
+  background-color: var(--coleredesjustes-light);
   color: var(--text-light);
 }
 
-.pathfinder-hover {
-  box-shadow: 0 0 10px 6px var(--dark-purple-hover);
-  background-color: var(--dark-purple-hover);
+.coleredesjustes-hover {
+  box-shadow: 0 0 10px 6px var(--coleredesjustes-dark);
+  background-color: var(--coleredesjustes-dark);
 }
 
-.pathfinder-hover:hover {
-  box-shadow: 0 0 10px 5px var(--violet);
+.coleredesjustes-hover:hover {
+  box-shadow: 0 0 10px 5px var(--coleredesjustes-light);
 }
 
-.pathfinder-button {
-  background-color: var(--dark-purple);
+.coleredesjustes-button {
+  background-color: var(--coleredesjustes);
   color: var(--text-light);
 }
 
-.pathfinder-article {
-  border: 1px solid var(--dark-purple);
+.coleredesjustes-article {
+  border: 1px solid var(--coleredesjustes);
 }
 
-.pathfinder-color-title {
-  background-color: var(--violet);
-  border-radius: 3px 3px 0 0;
-  color: var(--text-light);
-  text-shadow: 2px 2px 2px var(--text-dark);
+.coleredesjustes-color-title {
+  background-color: var(--coleredesjustes-light);
 }
 
 /* ------------------------------------------------
@@ -266,23 +252,20 @@
  }
 
 .button-verrousdor:hover {
-  border: 2px solid var(--dark-brown);
+  border: 2px solid var(--verrousdor-dark);
 }
 
 .verrousdor-color {
-  background-color: var(--brown);
+  background-color: var(--verrousdor);
   color: var(--text-light);
 }
 
 .verrousdor-article {
-  border: 1px solid var(--brown);
+  border: 1px solid var(--verrousdor);
 }
 
 .verrousdor-color-title {
-  background-color: var(--brown);
-  border-radius: 3px 3px 0 0;
-  color: var(--text-light);
-  text-shadow: 2px 2px 2px var(--text-dark);
+  background-color: var(--verrousdor);
 }
 
 /* ------------------------------------------------
@@ -314,7 +297,4 @@
 
 .dernierepluie-color-title {
   background-color: var(--dernierepluie);
-  border-radius: 3px 3px 0 0;
-  color: var(--text-light);
-  text-shadow: 2px 2px 2px var(--text-dark);
 }
