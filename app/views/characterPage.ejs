@@ -2,85 +2,125 @@
 <%- include('partials/navigation', {rpgData, rpgList, pageTitle: character, username }) %>
 
 <main class="characterPage__main">
-  <div class="main-row mb-20 mt-5" id="character-main-page">
-    <section class="col-section w30 mb-20">
-      <h2 class="text-2xl bold black mb-2">Statistiques globales</h2>
-      <article class="<%= rpgData.slug %>-color card w60 gap-4">
-        <p class="mt-4"><b>Moyenne globale :</b> <%= rpgData.stats[character].globalAvg %></p>
+  <div class="characterPage__main_sections-container">
+    <section class="characterPage__main_stats-section">
+      <h2 class="">Statistiques globales</h2>
+      <article class="<%= rpgData.slug %>-color characterPage__main_stats-section_article">
+        <p><b>Moyenne globale :</b> <%= rpgData.stats[character].globalAvg %></p>
         <p><b>Médiane globale :</b> <%= rpgData.stats[character].globalMedian %></p>
         <p><b>Réussites critiques :</b> <%= rpgData.stats[character].globalSuccess %></p>
-        <p class="mb-4"><b>Échecs critiques : </b><%= rpgData.stats[character].globalFail %></p>
+        <p><b>Échecs critiques : </b><%= rpgData.stats[character].globalFail %></p>
       </article>
     </section>
     
-    <section class="col-section black w70">
-      <h2 class="text-2xl bold black mb-2">Histogramme des dés de la campagne</h2>
-      <img src="/static/images/histograms/hist-<%= character %>.png" alt="Histogramme des dés non disponible" id="histogram">
+    <section class="characterPage__main_hist-section">
+      <h2>Histogramme des dés de la campagne</h2>
+      <img src="/static/images/histograms/hist-<%= character %>.png" alt="Histogramme des dés non disponible" id="histogram" class="histogram-img">
       <legend>La ligne rouge représente les statistiques attendues selon les probabilités</legend>
     </section>
   </div>
 
   <section class="dice-list-section">
     <h2 class="text-2xl bold my-4">Liste détaillée des dés</h2>
-  
-    <ul class="table mb-4">
-      <li class="<%= rpgData.slug %>-color">
-        <h4 class="py-3">Valeur du dé</h4>
-        <div></div>
-        <p class="py-3">Occurrences</p>
-      </li>
-      <% for (const [dice, occ] of Object.entries(counts)) { %>
-        <% if (dice < 51) { %>
-          <li>
-            <h4 class="py-3"><%= dice %></h4>
-            <div></div>
-            <% if (occ === min) { %>
-              <p class="success bold py-3"><%= occ %></p>
-            <% } else if (occ === max) { %>
-              <p class="fail bold py-3"><%= occ %></p>
-            <% } else { %>
-              <p class="py-3"><%= occ %></p>
-            <% } %>
-          </li>
+
+    <table class="table">
+      <tr>
+        <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
+        <% for (const [dice, occ] of Object.entries(counts).slice(0, 20)) { %>
+          <td><%= dice %></td>
         <% } %>
-      <% } %>
-    </ul>
-  
-    <% if (rpgData.diceSystem === 100) { %>
-      <ul class="table">
-        <li class="<%= rpgData.slug %>-color">
-          <h4>Valeur du dé</h4>
-          <div></div>
-          <p>Occurrences</p>
-        </li>
-        <% for (const [dice, occ] of Object.entries(counts)) { %>
-          <% if (dice > 50) { %>
-            <li>
-              <h4><%= dice %></h4>
-              <div></div>
-              <% if (occ === min) { %>
-                <p class="success bold"><%= occ %></p>
-              <% } else if (occ === max) { %>
-                <p class="fail bold"><%= occ %></p>
-              <% } else { %>
-                <p><%= occ %></p>
-              <% } %>
-            </li>
+      </tr>
+      <tr>
+        <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
+        <% for (const [dice, occ] of Object.entries(counts).slice(0, 20)) { %>
+          <% if (occ <= 20) { %>
+            <% if (occ === min || occ === max) { %>
+              <td class="fail bold"><%= occ %></td>
+            <% } else { %>
+            <td><%= occ %></td> %>
+            <% } %>
           <% } %>
         <% } %>
-      </ul>
+      </tr>
+    </table>
+    
+    <% if (rpgData.diceSystem === 100) {%>
+      <table class="table">
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(20, 40)) { %>
+            <td><%= dice %></td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(20, 40)) { %>
+              <% if (occ === min || occ === max) { %>
+                <td class="fail bold"><%= occ %></td>
+              <% } else { %>
+              <td><%= occ %></td> %>
+              <% } %>
+          <% } %>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(40, 60)) { %>
+            <td><%= dice %></td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(40, 60)) { %>
+              <% if (occ === min || occ === max) { %>
+                <td class="fail bold"><%= occ %></td>
+              <% } else { %>
+              <td><%= occ %></td> %>
+              <% } %>
+          <% } %>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(60, 80)) { %>
+            <td><%= dice %></td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(60, 80)) { %>
+              <% if (occ === min || occ === max) { %>
+                <td class="fail bold"><%= occ %></td>
+              <% } else { %>
+              <td><%= occ %></td> %>
+            <% } %>
+          <% } %>
+        </tr>
+      </table>
+
+      <table class="table">
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(80, 100)) { %>
+            <td><%= dice %></td>
+          <% } %>
+        </tr>
+        <tr>
+          <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
+          <% for (const [dice, occ] of Object.entries(counts).slice(80, 100)) { %>
+              <% if (occ === min || occ === max) { %>
+                <td class="fail bold"><%= occ %></td>
+              <% } else { %>
+              <td><%= occ %></td> %>
+              <% } %>
+          <% } %>
+        </tr>
+      </table>
     <% } %>
-  
-    <div class="flex-row-around" id="legend">
-      <div class="flex-row-center">
-        <div class="bg-fail square mr-10"></div>
-        Nombre maximum d'occurrences obtenues
-      </div>
-      <div class="flex-row-center">
-        <div class="bg-success square mr-10"></div>
-        Nombre minimum d'occurrences obtenues
-      </div>
-    </div>
   </section>
 </main>
 
