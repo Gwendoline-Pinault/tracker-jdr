@@ -68,7 +68,7 @@
   text-decoration: none;
 }
 
-.aria-img-bg, .coleredesjustes-img-bg, .poudlard-img-bg, .goldensun-img-bg, .verrousdor-img-bg, .dernierepluie-img-bg {
+.aria-img-bg, .coleredesjustes-img-bg, .poudlard-img-bg, .goldensun-img-bg, .verrousdor-img-bg, .dernierepluie-img-bg, .eveilseigneursdesrunes-img-bg {
   background-color: var(--bg-light);
   border-radius: 5px;
 }
@@ -303,4 +303,36 @@
 
 .dernierepluie-color-title {
   background-color: var(--dernierepluie);
+}
+
+/* ------------------------------------------------
+          L'éveil des seigneurs des runes                     
+ ------------------------------------------------ */
+.eveilseigneursdesrunes-icon {
+  background-image: url("/static/images/eveilseigneursdesrunes.png");
+  background-position: center;
+ }
+
+.button-submit-eveilseigneursdesrunes {
+  background-color: var(--eveilseigneursdesrunes-light);
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.button-eveilseigneursdesrunes:hover {
+  border: 2px solid var(--eveilseigneursdesrunes-light);
+}
+
+.eveilseigneursdesrunes-color {
+  background-color: var(--eveilseigneursdesrunes);
+  color: var(--text-light);
+}
+
+.eveilseigneursdesrunes-article {
+  border: 1px solid var(--eveilseigneursdesrunes);
+  margin-bottom: 20px;
+}
+
+.eveilseigneursdesrunes-color-title {
+  background-color: var(--eveilseigneursdesrunes);
 }
