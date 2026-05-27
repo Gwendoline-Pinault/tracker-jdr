@@ -11,12 +11,16 @@
 
   <h1 class="title bg-title">Se connecter</h1>
 
-  <form action="/login" method="post" class="login-form w-[20%]">
-    <label for="username">Identifiant</label>
-    <input type="text" name="username" id="username" required pattern="[^<>%${}?!/@]" class="bg-white">
+  <form action="/login" method="post" class="login-form">
+    <div>
+      <label for="username">Identifiant</label>
+      <input type="text" name="username" id="username" required pattern="[^<>%${}?!/@]" class="bg-white">
+    </div>
 
-    <label for="password">Mot de passe</label>
-    <input type="password" name="password" id="password" class="bg-white">
+    <div>
+      <label for="password">Mot de passe</label>
+      <input type="password" name="password" id="password" class="bg-white">
+    </div>
 
     <button class="button validation-button" type="submit">Se connecter</button>
   </form>

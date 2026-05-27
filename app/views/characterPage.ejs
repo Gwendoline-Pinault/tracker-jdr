@@ -6,10 +6,13 @@
     <section class="characterPage__main_stats-section">
       <h2 class="">Statistiques globales</h2>
       <article class="<%= rpgData.slug %>-color characterPage__main_stats-section_article">
+        <p><b>Total de dés lancés :</b> <%= rpgData.stats[character].dicesList.length %></p>
         <p><b>Moyenne globale :</b> <%= rpgData.stats[character].globalAvg %></p>
         <p><b>Médiane globale :</b> <%= rpgData.stats[character].globalMedian %></p>
         <p><b>Réussites critiques :</b> <%= rpgData.stats[character].globalSuccess %></p>
         <p><b>Échecs critiques : </b><%= rpgData.stats[character].globalFail %></p>
+        <p><b>Pourcentage de réussites critiques :</b> <%= (rpgData.stats[character].globalSuccess / rpgData.stats[character].dicesList.length * 100).toFixed(2) %>%</p>
+        <p><b>Pourcentage d'échecs critiques :</b> <%= (rpgData.stats[character].globalFail / rpgData.stats[character].dicesList.length * 100).toFixed(2) %>%</p>
       </article>
     </section>
     
@@ -27,15 +30,17 @@
       <tr>
         <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
         <% for (const [dice, occ] of Object.entries(counts).slice(0, 20)) { %>
-          <td><%= dice %></td>
+          <td class="bold"><%= dice %></td>
         <% } %>
       </tr>
       <tr>
         <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
         <% for (const [dice, occ] of Object.entries(counts).slice(0, 20)) { %>
-          <% if (occ <= 20) { %>
-            <% if (occ === min || occ === max) { %>
+          <% if (dice <= 20) { %>
+            <% if (occ === min) { %>
               <td class="fail bold"><%= occ %></td>
+            <% } else if (occ === max) { %>
+              <td class="success bold"><%= occ %></td>
             <% } else { %>
             <td><%= occ %></td> %>
             <% } %>
@@ -49,17 +54,19 @@
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(20, 40)) { %>
-            <td><%= dice %></td>
+            <td class="bold"><%= dice %></td>
           <% } %>
         </tr>
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(20, 40)) { %>
-              <% if (occ === min || occ === max) { %>
-                <td class="fail bold"><%= occ %></td>
-              <% } else { %>
-              <td><%= occ %></td> %>
-              <% } %>
+            <% if (occ === min) { %>
+              <td class="fail bold"><%= occ %></td>
+            <% } else if (occ === max) { %>
+              <td class="success bold"><%= occ %></td>
+            <% } else { %>
+            <td><%= occ %></td> %>
+            <% } %>
           <% } %>
         </tr>
       </table>
@@ -68,17 +75,19 @@
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(40, 60)) { %>
-            <td><%= dice %></td>
+            <td class="bold"><%= dice %></td>
           <% } %>
         </tr>
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(40, 60)) { %>
-              <% if (occ === min || occ === max) { %>
-                <td class="fail bold"><%= occ %></td>
-              <% } else { %>
-              <td><%= occ %></td> %>
-              <% } %>
+            <% if (occ === min) { %>
+              <td class="fail bold"><%= occ %></td>
+            <% } else if (occ === max) { %>
+              <td class="success bold"><%= occ %></td>
+            <% } else { %>
+            <td><%= occ %></td> %>
+            <% } %>
           <% } %>
         </tr>
       </table>
@@ -87,16 +96,18 @@
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(60, 80)) { %>
-            <td><%= dice %></td>
+            <td class="bold"><%= dice %></td>
           <% } %>
         </tr>
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(60, 80)) { %>
-              <% if (occ === min || occ === max) { %>
-                <td class="fail bold"><%= occ %></td>
-              <% } else { %>
-              <td><%= occ %></td> %>
+            <% if (occ === min) { %>
+              <td class="fail bold"><%= occ %></td>
+            <% } else if (occ === max) { %>
+              <td class="success bold"><%= occ %></td>
+            <% } else { %>
+            <td><%= occ %></td> %>
             <% } %>
           <% } %>
         </tr>
@@ -106,17 +117,19 @@
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color bold">Valeur du dé</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(80, 100)) { %>
-            <td><%= dice %></td>
+            <td class="bold"><%= dice %></td>
           <% } %>
         </tr>
         <tr>
           <th scope="row" class="<%= rpgData.slug %>-color">Occurrences</th>
           <% for (const [dice, occ] of Object.entries(counts).slice(80, 100)) { %>
-              <% if (occ === min || occ === max) { %>
-                <td class="fail bold"><%= occ %></td>
-              <% } else { %>
+            <% if (occ === min) { %>
+              <td class="fail bold"><%= occ %></td>
+            <% } else if (occ === max) { %>
+              <td class="success bold"><%= occ %></td>
+            <% } else { %>
               <td><%= occ %></td> %>
-              <% } %>
+            <% } %>
           <% } %>
         </tr>
       </table>

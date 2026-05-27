@@ -1,5 +1,5 @@
 .validation-button {
-  background-color: var(--primary);
+  background-color: var(--secondary);
   color: var(--text-light);
   font-weight: bold;
   margin-top: 10px;
@@ -10,7 +10,7 @@
 }
 
 .default-color {
-  background-color: var(--secondary);
+  background-color: var(--primary);
   color: var(--text-light);
 }
 
@@ -66,6 +66,11 @@
 .aria-article, .coleredesjustes-article, .poudlard-article, .goldensun-article, .verrousdor-article .dernierepluie-article {
   border-radius: 5px;
   text-decoration: none;
+}
+
+.aria-img-bg, .coleredesjustes-img-bg, .poudlard-img-bg, .goldensun-img-bg, .verrousdor-img-bg, .dernierepluie-img-bg {
+  background-color: var(--bg-light);
+  border-radius: 5px;
 }
 
 /* ------------------------------------------------
@@ -278,6 +283,7 @@
 
 .button-submit-dernierepluie {
   background-color: var(--dernierepluie-hover);
+  color: var(--text-light);
   margin-top: 5px;
 }
 

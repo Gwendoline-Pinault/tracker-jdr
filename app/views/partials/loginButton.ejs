@@ -2,11 +2,11 @@
   <div class="flex-row-center">
     <img class="img-icon-bg" src="/static/images/circle-user.svg" alt="Connecté">
     <a href="/logout" class="icon nav-icon <%= slug %>-color">
-      <img src="/static/images/logout.png" alt="[->" class="img-icon">
+      <img src="/static/images/logout.png" alt="[->" class="img-icon <%= slug %>-img-bg">
     </a>
   </div>
 <% } else { %>
   <a href="/connexion" class="icon nav-icon <%= slug %>-color">
-    <img src="/static/images/login-icon.svg" class="img-icon" alt="->]"/>
+    <img src="/static/images/login-icon.svg" class="img-icon <%= slug %>-img-bg" alt="->]"/>
   </a>
 <% } %>

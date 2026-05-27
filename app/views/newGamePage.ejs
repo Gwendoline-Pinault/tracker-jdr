@@ -2,10 +2,10 @@
 
 <%- include('partials/navigation', {rpgData, rpgList, pageTitle: rpgData.name}) %>
 
-<main class="main-body-page">
-  <h1 class="main-title"> Nouvelle partie</h1>
+<main class="new-game__main">
+  <h1 class="new-game__main-title">Nouvelle partie</h1>
   
-  <form action="/add-game/<%= rpg %>" method="post" class="form <%= rpg %>-color">
+  <form action="/add-game/<%= rpg %>" method="post" class="new-game__main-form <%= rpg %>-color">
     <div class="mb-4">
       <label for="date">Date de la partie :</label>
       <input type="date" name="date" id="date" required class="bg-white text-black">
@@ -13,7 +13,7 @@
 
     <% characters.forEach(character => { %>
       <div class="character-div">
-        <h3><%= character %></h3>
+        <h3 class="new-game__main-form_subtitle"><%= character %></h3>
 
         <div>
           <label for="<%= character %>-dices">Liste des dés :</label>
@@ -22,13 +22,17 @@
       </div>
     <% }); %>
 
-    <div class="character-div mt-6">
-      <h3 class="bold text-md mb-2">Campagne terminée :</h3>
-      <label for="status-true">Oui</label>
-      <input type="radio" name="status" id="status-true" value="true">
-      <label for="status-false">Non</label>
-      <input type="radio" name="status" id="status-false" value="false" checked>
-    </div>
+    <section class="new-game__main-form_final-section">
+      <h3 class="new-game__main-form_subtitle">Campagne terminée :</h3>
+      <div>
+        <input type="radio" name="status" id="status-true" value="true">
+        <label for="status-true">Oui</label>
+      </div>
+      <div>
+        <input type="radio" name="status" id="status-false" value="false" checked>
+        <label for="status-false">Non</label>
+      </div>
+    </section>
 
     <button type="submit" class="button button-<%= rpg %> <%= rpg === "dernierepluie" && "button-submit-dernierepluie" %> form-button">Valider</button>
   </form>

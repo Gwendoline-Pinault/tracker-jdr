@@ -9,7 +9,7 @@
   --button-hover: rgb(110, 110, 110);
   --primary: rgb(29, 100, 154);
   --primary-hover: rgb(45, 134, 202);
-  --secondary: rgb(27, 40, 49);
+  --secondary: rgb(26, 52, 70);
   --secondary-hover: rgba(27, 40, 49, 0.8);
   --red: rgb(255, 0, 0);
   --green: rgb(37, 184, 0);
@@ -50,8 +50,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  width: 100dvw;
+  height: 100dvh;
 }
 
 .homepage__main {
@@ -157,6 +157,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20px 0 10px 0;
 }
 
 .rpgPage__main_games-section_article-container {
@@ -193,7 +194,7 @@ a {
 }
 
 .bg-title {
-  background-color: var(--dark-blue);
+  background-color: var(--secondary);
 }
 
 .main-row {
@@ -517,25 +518,56 @@ a {
 -----------------------------------------------------
 */
 
-.form {
+.new-game__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.new-game__main-title {
+  text-align: center;
+}
+
+.new-game__main-form {
   border-radius: 10px;
   box-shadow: 2px 2px 10px var(--dark-blue);
-  padding: 30px;
-  width: 50%;
+  padding: 20px;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.new-game__main-form_subtitle {
+  font-weight: bold;
+  font-size: 15px;
+}
+
 .form-button {
-  margin: 30px 0 0 0;
+  margin: 20px 0 0 0;
   font-weight: bold;
   border: 2px solid transparent;
 }
 
 .character-div {
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  text-align: left;
+}
+
+.new-game__main-form_final-section {
+  margin-top: 20px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
+  align-items: center;
+}
+
+.new-game__main-form_final-section div {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
 }
 
 .character-div div {
@@ -543,15 +575,15 @@ a {
   align-items: center;
 }
 
-.form input, .login-form input {
+.new-game__main-form input, .login-form input {
   border-radius: 5px;
   padding: 5px;
   border: none;
 }
 
-.form label, .login-form label {
+.new-game__main-form label {
   font-weight: 600;
-  font-size: medium;
+  font-size: 13px;
   margin: 0 10px;
 }
 
@@ -565,33 +597,107 @@ a {
 -----------------------------------------------------
 */
 
+.login-form label {
+  font-weight: 600;
+  font-size: medium;
+  margin: 0 10px;
+}
+
 .login-form {
   border-radius: 10px;
-  box-shadow: 2px 2px 10px var(--dark-blue);
+  box-shadow: 2px 2px 10px var(--secondary);
+  background-color: var(--primary);
   padding: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--light-blue);
-  margin-top: 10%;
+  width: 80%;
+  gap: 10px;
+  margin-top: 10dvh;
 }
 
-.login-form label, .login-form input, .login-form select {
-  color: var(--text-dark);
+.login-form div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.login-form label, .new-campaign-form label {
+  color: var(--text-light);
+  width: 95%;
+  font-weight: bold;
+}
+
+.login-form input, .login-form select, .new-campaign-form input {
+  background-color: white;
   margin-bottom: 10px;
+  width: 95%;
+}
+
+/* 
+-----------------------------------------------------
+                NEW CAMPAIGN PAGE
+-----------------------------------------------------
+*/
+
+.new-campaign__main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.new-campaign__form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.new-campaign-form {
+  font-size: 14px;
+  margin: 0;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px var(--secondary);
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  gap: 10px;
+  padding: 20px;
+}
+
+.new-campaign-form__subtitle {
+  align-self: flex-start;
+  color: var(--text-light);
+  font-weight: bold;
+  margin: 10px;
+}
+
+.radio-div-container {
   width: 90%;
 }
 
-.login-form input, .login-form select {
-  background-color: white;
+.new-campaign-form input {
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
 }
 
 .radio-div {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  width: 50%;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.radio-div label {
+  font-weight: normal;
 }
 
 .radio-div input {
@@ -610,7 +716,11 @@ a {
   }
 }
 
-/* tablet */
+/* 
+---------------------------------
+          TABLET VIEW
+_________________________________ 
+*/
 @media (min-width: 700px) {
   .homepage__main {
     padding: 20px;
@@ -704,9 +814,48 @@ a {
   .table td {
     padding: 5px;
   }
+
+  .login-form  {
+    margin-top: 20dvh;
+    width: 50%;
+  }
+
+  .new-campaign-form__subtitle {
+    width: 90%;
+    text-align: left;
+  }
+
+  .radio-div-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+  }
+
+  .new-campaign__form-section {
+    flex-grow: 0;
+    margin-top: 5dvh;
+    width: 80%;
+  }
+
+  .new-game__main-form {
+    width: 70%;
+  }
+
+  .new-game__main-form_final-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    align-self: flex-start;
+  }
 }
 
-/* desktop */
+/* 
+---------------------------------
+          DESKTOP VIEW
+_________________________________ 
+*/
+
 @media (min-width: 1200px) {
   .homepage__main {
     padding: 30px;
@@ -815,5 +964,34 @@ a {
 
   .table td {
     padding: 5px;
+  }
+
+  .login-form {
+    margin-top: 20dvh;
+    width: 30%;
+  }
+
+  .new-campaign-form {
+    margin-top: 10dvh;
+    width: 30%;
+  }
+
+  .new-campaign-form__subtitle {
+    width: 90%;
+    text-align: left;
+  }
+
+  .new-campaign__form-section {
+    flex-grow: 0;
+    margin-top: 2dvh;
+    width: 100%;
+  }
+
+  .new-game__main-title {
+    margin: 3dvh 0;
+  }
+
+  .new-game__main-form {
+    width: 40%;
   }
 }
