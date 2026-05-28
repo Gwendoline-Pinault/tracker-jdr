@@ -57,13 +57,13 @@
 }
 
 /* BASE COMMUNE */
-.aria-icon, .coleredesjustes-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon {
+.aria-icon, .coleredesjustes-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon, .eveilseigneursdesrunes-icon {
   text-align: center;
   background-position: center;
   background-size: cover;
  }
 
-.aria-article, .coleredesjustes-article, .poudlard-article, .goldensun-article, .verrousdor-article .dernierepluie-article {
+.aria-article, .coleredesjustes-article, .poudlard-article, .goldensun-article, .verrousdor-article .dernierepluie-article, .eveilseigneursdesrunes-article {
   border-radius: 5px;
   text-decoration: none;
 }
@@ -267,6 +267,7 @@
 
 .verrousdor-article {
   border: 1px solid var(--verrousdor);
+  border-radius: 5px;
 }
 
 .verrousdor-color-title {
@@ -298,7 +299,7 @@
 
 .dernierepluie-article {
   border: 1px solid var(--dernierepluie);
-  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .dernierepluie-color-title {
@@ -330,7 +331,6 @@
 
 .eveilseigneursdesrunes-article {
   border: 1px solid var(--eveilseigneursdesrunes);
-  margin-bottom: 20px;
 }
 
 .eveilseigneursdesrunes-color-title {
