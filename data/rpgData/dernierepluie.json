@@ -14,22 +14,26 @@
   "stats": {
     "Anthony": {
       "globalMedian": 8,
-      "globalAvg": 9,
+      "globalAvg": 10,
       "globalSuccess": 0,
       "globalFail": 0,
       "dicesList": [
         2,
         5,
+        7,
         8,
         8,
         8,
+        9,
+        10,
+        15,
         17,
         18
       ]
     },
     "Clarissa": {
-      "globalMedian": 12,
-      "globalAvg": 13,
+      "globalMedian": 14,
+      "globalAvg": 14,
       "globalSuccess": 0,
       "globalFail": 0,
       "dicesList": [
@@ -37,33 +41,39 @@
         10,
         12,
         14,
+        16,
+        18,
         19
       ]
     },
     "Ethan": {
       "globalMedian": 7,
-      "globalAvg": 9,
-      "globalSuccess": 2,
+      "globalAvg": 8,
+      "globalSuccess": 3,
       "globalFail": 1,
       "dicesList": [
+        1,
         1,
         1,
         2,
         6,
         7,
         8,
+        10,
         16,
         18,
         20
       ]
     },
     "Jay": {
-      "globalMedian": 17,
-      "globalAvg": 15,
+      "globalMedian": 15,
+      "globalAvg": 12,
       "globalSuccess": 0,
       "globalFail": 0,
       "dicesList": [
+        5,
         6,
+        7,
         15,
         17,
         18,
@@ -128,6 +138,50 @@
         ],
         "average": 15,
         "median": 17,
+        "success": 0,
+        "fail": 0
+      }
+    },
+    "03/06/2026": {
+      "Anthony": {
+        "dices": [
+          10,
+          15,
+          7,
+          9
+        ],
+        "average": 10,
+        "median": 9,
+        "success": 0,
+        "fail": 0
+      },
+      "Clarissa": {
+        "dices": [
+          18,
+          16
+        ],
+        "average": 17,
+        "median": 16,
+        "success": 0,
+        "fail": 0
+      },
+      "Ethan": {
+        "dices": [
+          1,
+          10
+        ],
+        "average": 6,
+        "median": 1,
+        "success": 1,
+        "fail": 0
+      },
+      "Jay": {
+        "dices": [
+          7,
+          5
+        ],
+        "average": 6,
+        "median": 5,
         "success": 0,
         "fail": 0
       }
