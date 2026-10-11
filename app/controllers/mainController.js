@@ -78,8 +78,8 @@ const mainController = {
     characters.forEach(character => {
       game[character] = {
         dices: [],
-        average: 0,
-        median: 0,
+        average: null,
+        median: null,
         success: 0,
         fail: 0
       }
@@ -87,23 +87,26 @@ const mainController = {
 
     // génère les stats pour chaque personnage
     characters.forEach(character => {
-      // récupère la liste des dés et la formate
-      const dices = dataMapper.formatDices(form[character]);
-      game[character].dices = dices;
-
-      // calcule de la moyenne
-      const average = dataMapper.calculateAverage(dices);
-      game[character].average = average; 
-
-      // calcule de la médiane
-      const median = dataMapper.calculateMedian(dices);
-      game[character].median = median;
-
-      // calcule le nombre de réussites et d'échecs critiques
-      const {success, fail} = dataMapper.getCritValues(dices, rpgData.diceSystem, rpgData.systemOrder);
-      game[character].success = success;
-      game[character].fail = fail;
-
+      if (form[character]) {
+        // récupère la liste des dés et la formate
+        const dices = dataMapper.formatDices(form[character]);
+        game[character].dices = dices;
+  
+        // calcule de la moyenne
+        const average = dataMapper.calculateAverage(dices);
+        game[character].average = average; 
+  
+        // calcule de la médiane
+        const median = dataMapper.calculateMedian(dices);
+        game[character].median = median;
+  
+        // calcule le nombre de réussites et d'échecs critiques
+        const {success, fail} = dataMapper.getCritValues(dices, rpgData.diceSystem, rpgData.systemOrder);
+        game[character].success = success;
+        game[character].fail = fail;
+      } else {
+        // si le joueur n'a pas lancé de dés, ne rien faire (garde la valeur initiale)
+      }
     });
 
     // ajoute la partie au fichier de sauvegarde
@@ -112,23 +115,29 @@ const mainController = {
 
     // met à jour les statistiques globales
     characters.forEach(character => {
-      // met à jour la liste des dés
-      const dicesList = [...gameFile.stats[character].dicesList];
-      dicesList.push(...gameFile.games[date][character].dices);
-
-      const sortedDices = dicesList.toSorted((a,b) => a - b);
       
-      // calcule les stats globales
-      const globalMedian = dataMapper.calculateMedian(dicesList);
-      const globalAvg = dataMapper.calculateAverage(dicesList);
-      const {success, fail} = dataMapper.getCritValues(dicesList, rpgData.diceSystem, rpgData.systemOrder);
-      
-      // met à jour le fichier final
-      gameFile.stats[character].globalAvg = globalAvg;
-      gameFile.stats[character].globalMedian = globalMedian;
-      gameFile.stats[character].globalSuccess = success;
-      gameFile.stats[character].globalFail = fail;
-      gameFile.stats[character].dicesList = sortedDices;
+      // si le joueur a lancé les dés, on calcule les stats
+      if (game[character].dices.length > 0) {
+        // met à jour la liste des dés
+        const dicesList = [...gameFile.stats[character].dicesList];
+        dicesList.push(...gameFile.games[date][character].dices);
+        
+        const sortedDices = dicesList.toSorted((a,b) => a - b);
+        
+        // calcule les stats globales
+        const globalMedian = dataMapper.calculateMedian(dicesList);
+        const globalAvg = dataMapper.calculateAverage(dicesList);
+        const {success, fail} = dataMapper.getCritValues(dicesList, rpgData.diceSystem, rpgData.systemOrder);
+        
+        // met à jour le fichier final
+        gameFile.stats[character].globalAvg = globalAvg;
+        gameFile.stats[character].globalMedian = globalMedian;
+        gameFile.stats[character].globalSuccess = success;
+        gameFile.stats[character].globalFail = fail;
+        gameFile.stats[character].dicesList = sortedDices;
+      } else {
+        // on garde les stats par défaut (initialisation)
+      }
     })
 
     if (form.status === true) {

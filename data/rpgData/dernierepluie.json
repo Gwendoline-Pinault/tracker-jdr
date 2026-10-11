@@ -33,6 +33,7 @@
         6,
         6,
         6,
+        6,
         7,
         7,
         8,
@@ -602,6 +603,38 @@
         ],
         "average": 13,
         "median": 16,
+        "success": 0,
+        "fail": 0
+      }
+    },
+    "02/10/2026": {
+      "Anthony": {
+        "dices": [
+          6
+        ],
+        "average": 6,
+        "median": 6,
+        "success": 0,
+        "fail": 0
+      },
+      "Clarissa": {
+        "dices": [],
+        "average": null,
+        "median": null,
+        "success": 0,
+        "fail": 0
+      },
+      "Ethan": {
+        "dices": [],
+        "average": null,
+        "median": null,
+        "success": 0,
+        "fail": 0
+      },
+      "Jay": {
+        "dices": [],
+        "average": null,
+        "median": null,
         "success": 0,
         "fail": 0
       }

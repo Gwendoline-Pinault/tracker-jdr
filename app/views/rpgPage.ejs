@@ -52,15 +52,23 @@
               <p>Dés lancés : <%= game[character].dices.length %></p>
               <p>
                 Moyenne :
+                <% if (!game[character].average) { %>
+                  <span>0</span>
+                <% } else { %>
                 <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, systemOrder: rpgData.systemOrder, data: game[character].average}) %>">
                   <%= game[character].average %>
                 </span>
+                <% } %>
               </p>
               <p>
                 Médiane :
+                <% if (!game[character].median) { %>
+                  <span>0</span>
+                <% } else { %>
                 <span class="<%- include('partials/textColor', {diceSystem: rpgData.diceSystem, systemOrder: rpgData.systemOrder, data: game[character].median}) %>">
                   <%= game[character].median %>
                 </span>
+               <% } %>
               </p>
               <p>Réussites : <span><%= game[character].success %></span></p>
               <p>Échecs : <span><%= game[character].fail %></span></p>
