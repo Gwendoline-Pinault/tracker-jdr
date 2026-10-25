@@ -1,0 +1,132 @@
+{
+  "name": "Final Fantasy VI",
+  "shortName": "FFVI",
+  "slug": "ff6",
+  "characters": [
+    "Celes",
+    "Edgar",
+    "Locke",
+    "Tina"
+  ],
+  "diceSystem": 20,
+  "systemOrder": "DESC",
+  "status": "En cours",
+  "stats": {
+    "Celes": {
+      "globalMedian": 6,
+      "globalAvg": 9,
+      "globalSuccess": 2,
+      "globalFail": 0,
+      "dicesList": [
+        4,
+        5,
+        5,
+        5,
+        6,
+        6,
+        9,
+        20,
+        20
+      ]
+    },
+    "Edgar": {
+      "globalMedian": 11,
+      "globalAvg": 12,
+      "globalSuccess": 1,
+      "globalFail": 0,
+      "dicesList": [
+        2,
+        6,
+        11,
+        12,
+        19,
+        20
+      ]
+    },
+    "Locke": {
+      "globalMedian": 12,
+      "globalAvg": 14,
+      "globalSuccess": 0,
+      "globalFail": 0,
+      "dicesList": [
+        8,
+        12,
+        17,
+        18
+      ]
+    },
+    "Tina": {
+      "globalMedian": 8,
+      "globalAvg": 9,
+      "globalSuccess": 0,
+      "globalFail": 1,
+      "dicesList": [
+        1,
+        6,
+        8,
+        12,
+        18
+      ]
+    }
+  },
+  "games": {
+    "25/10/2026": {
+      "Celes": {
+        "dices": [
+          5,
+          9,
+          6,
+          6,
+          5,
+          4,
+          20,
+          20,
+          5
+        ],
+        "average": 9,
+        "median": 6,
+        "success": 2,
+        "fail": 0
+      },
+      "Edgar": {
+        "dices": [
+          2,
+          19,
+          20,
+          12,
+          11,
+          6
+        ],
+        "average": 12,
+        "median": 11,
+        "success": 1,
+        "fail": 0
+      },
+      "Locke": {
+        "dices": [
+          12,
+          18,
+          8,
+          17
+        ],
+        "average": 14,
+        "median": 12,
+        "success": 0,
+        "fail": 0
+      },
+      "Tina": {
+        "dices": [
+          6,
+          18,
+          1,
+          12,
+          8
+        ],
+        "average": 9,
+        "median": 8,
+        "success": 0,
+        "fail": 1
+      }
+    }
+  }
+}

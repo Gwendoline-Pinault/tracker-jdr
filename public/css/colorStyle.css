@@ -57,18 +57,18 @@
 }
 
 /* BASE COMMUNE */
-.aria-icon, .coleredesjustes-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon, .eveilseigneursdesrunes-icon {
+.aria-icon, .coleredesjustes-icon, .poudlard-icon, .goldensun-icon, .verrousdor-icon .dernierepluie-icon, .eveilseigneursdesrunes-icon, .ff6-icon {
   text-align: center;
   background-position: center;
   background-size: cover;
  }
 
-.aria-article, .coleredesjustes-article, .poudlard-article, .goldensun-article, .verrousdor-article .dernierepluie-article, .eveilseigneursdesrunes-article {
+.aria-article, .coleredesjustes-article, .poudlard-article, .goldensun-article, .verrousdor-article .dernierepluie-article, .eveilseigneursdesrunes-article, .ff6-article {
   border-radius: 5px;
   text-decoration: none;
 }
 
-.aria-img-bg, .coleredesjustes-img-bg, .poudlard-img-bg, .goldensun-img-bg, .verrousdor-img-bg, .dernierepluie-img-bg, .eveilseigneursdesrunes-img-bg {
+.aria-img-bg, .coleredesjustes-img-bg, .poudlard-img-bg, .goldensun-img-bg, .verrousdor-img-bg, .dernierepluie-img-bg, .eveilseigneursdesrunes-img-bg, .ff6-img-bg {
   background-color: var(--bg-light);
   border-radius: 5px;
 }
@@ -335,4 +335,35 @@
 
 .eveilseigneursdesrunes-color-title {
   background-color: var(--eveilseigneursdesrunes);
+}
+
+/* ------------------------------------------------
+                    FFVI                      
+ ------------------------------------------------ */
+.ff6-icon {
+  background-image: url("/static/images/ff6.png");
+  background-position: center;
+}
+
+.button-submit-ff6 {
+  background-color: var(--ff6);
+  color: var(--text-light);
+  margin-top: 5px;
+}
+
+.button-ff6:hover {
+  border: 2px solid var(--ff6);
+}
+
+.ff6-color {
+  background-color: var(--ff6-light);
+  color: var(--text-light);
+}
+
+.ff6-article {
+  border: 1px solid var(--ff6-light);
+}
+
+.ff6-color-title {
+  background-color: var(--ff6-light);
 }
