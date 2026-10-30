@@ -30,6 +30,7 @@
         5,
         5,
         5,
+        5,
         6,
         6,
         6,
@@ -66,7 +67,8 @@
         17,
         17,
         18,
-        18
+        18,
+        19
       ]
     },
     "Clarissa": {
@@ -161,7 +163,7 @@
       ]
     },
     "Jay": {
-      "globalMedian": 7,
+      "globalMedian": 8,
       "globalAvg": 10,
       "globalSuccess": 3,
       "globalFail": 2,
@@ -185,6 +187,7 @@
         7,
         7,
         7,
+        8,
         10,
         11,
         12,
@@ -635,6 +638,41 @@
         "dices": [],
         "average": null,
         "median": null,
+        "success": 0,
+        "fail": 0
+      }
+    },
+    "30/10/2026": {
+      "Anthony": {
+        "dices": [
+          19,
+          5
+        ],
+        "average": 12,
+        "median": 5,
+        "success": 0,
+        "fail": 0
+      },
+      "Clarissa": {
+        "dices": [],
+        "average": null,
+        "median": null,
+        "success": 0,
+        "fail": 0
+      },
+      "Ethan": {
+        "dices": [],
+        "average": null,
+        "median": null,
+        "success": 0,
+        "fail": 0
+      },
+      "Jay": {
+        "dices": [
+          8
+        ],
+        "average": 8,
+        "median": 8,
         "success": 0,
         "fail": 0
       }
