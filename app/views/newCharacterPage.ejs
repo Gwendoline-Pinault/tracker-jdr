@@ -1,0 +1,26 @@
+<%- include('partials/header') %>
+
+<main class="new-character__main">
+  <header class="nav-section">
+    <nav class="navbar default-color">
+      <a href="/" class="nav-item default-hover">Retour à l'accueil</a>
+    </nav>
+  </header>
+  
+  <h1 class="title bg-title">Ajouter un personnage</h1>
+
+  <section class="new-character__form-section">
+    <form action="/nouveau-personnage" method="post" class="new-character-form">
+      <label for="campaign">Campagne</label>
+      <input type="hidden" name="campaign" value="<%= rpg %>">
+      <div class="inputStyle"><%= campaign %></div>
+
+      <label for="character">Nom du personnage</label>
+      <input type="text" name="character">
+
+      <button type="submit" class="button validation-button">Valider</button>
+    </form>
+  </section>
+</main>
+
+<%- include('partials/footer') %>

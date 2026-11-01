@@ -185,6 +185,26 @@ const mainController = {
     dataMapper.createGameFile(campaignData, form.slug);
 
     res.redirect('/');
+  },
+  newCharacterPage: async (req, res) => {
+    const username = await req.session.username;
+    const rpg = req.params.rpg;
+
+    const campaign = dataMapper.getRpgData(rpg).name;
+
+    if (username === process.env.IDENTIFIANT) {
+      res.render('newCharacterPage', { username, rpg, campaign });
+
+    } else {
+      res.redirect(`/campagne/${rpg}`);
+    }
+  },
+  addNewCharacter: async (req, res) => {
+    const form = await req.body;
+
+    console.log(form);
+
+    res.redirect(`/campagne/${form.campaign}`);
   }
 }
 

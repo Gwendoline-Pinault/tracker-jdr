@@ -668,7 +668,7 @@ a {
   width: 100%;
 }
 
-.new-campaign-form {
+.new-campaign-form, .new-character-form {
   font-size: 14px;
   margin: 0;
   border-radius: 10px;
@@ -714,6 +714,49 @@ a {
 .radio-div input {
   width: fit-content;
 }
+
+/*------------------------------------------------
+                NEW CHARACTER PAGE
+---------------------------------------------------*/
+.new-character__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.new-character__form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  width: 40%;
+}
+
+.new-character-form label {
+  font-weight: bold;
+  font-size: inherit;
+  color: var(--text-light);
+}
+
+.new-character-form input {
+  width: 95%;
+  border-radius: 5px;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+}
+
+.inputStyle {
+  width: 95%;
+  border-radius: 5px;
+  border: 1px solid var(--text-dark);
+  color: var(--text-dark);
+  background-color: var(--text-light);
+  padding-left: 5px;
+}
+
 
 /* ------------------------------------------------
                    MEDIA 

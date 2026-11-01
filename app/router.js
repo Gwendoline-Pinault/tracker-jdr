@@ -15,8 +15,10 @@ router.post('/login', authController.login);
 // protected routes
 router.get('/nouvelle-campagne', mainController.newCampaignPage);
 router.get('/campagne/:rpg/nouvelle-partie', mainController.newGamePage);
+router.get('/campagne/:rpg/nouveau-personnage', mainController.newCharacterPage);
 
 router.post('/add-game/:rpg', mainController.addGame);
 router.post('/nouvelle-campagne', mainController.addNewRpg);
+router.post('/nouveau-personnage', mainController.addNewCharacter);
 
 module.exports = router;

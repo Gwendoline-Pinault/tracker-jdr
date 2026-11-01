@@ -35,7 +35,10 @@
     <h2 id="nb-games">Nombre de parties : <%= Object.keys(rpgData.games).length %> </h2>
     <!-- Bouton d'ajout de partie -->
     <% if (rpgData.status === "En cours" && username) { %>
-      <a href="/campagne/<%= rpgData.slug %>/nouvelle-partie" class="button button-<%= rpgData.slug %> <%= rpgData.slug %>-color ">Ajouter partie</a>
+      <div class="flex-row-center">
+        <a href="/campagne/<%= rpgData.slug %>/nouveau-personnage" class="button button-<%= rpgData.slug %> <%= rpgData.slug %>-color-light">Ajouter personnage</a>
+        <a href="/campagne/<%= rpgData.slug %>/nouvelle-partie" class="button button-<%= rpgData.slug %> <%= rpgData.slug %>-color">Ajouter partie</a>
+      </div>
     <% } %>
   </div>
   

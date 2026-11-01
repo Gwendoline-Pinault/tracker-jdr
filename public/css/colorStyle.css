@@ -329,6 +329,15 @@
   color: var(--text-light);
 }
 
+.eveilseigneursdesrunes-color-light {
+  background-color: var(--eveilseigneursdesrunes-light);
+  color: var(--text-dark);
+}
+
+.eveilseigneursdesrunes-color-light:hover {
+  border: 2px solid var(--eveilseigneursdesrunes);
+}
+
 .eveilseigneursdesrunes-article {
   border: 1px solid var(--eveilseigneursdesrunes);
 }
