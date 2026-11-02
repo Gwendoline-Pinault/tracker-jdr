@@ -200,11 +200,38 @@ const mainController = {
     }
   },
   addNewCharacter: async (req, res) => {
-    const form = await req.body;
+    const { character, campaign } = await req.body;
 
-    console.log(form);
+    // récupère les données du fichier de sauvegarde
+    const rpgData = dataMapper.getRpgData(campaign);
+    const newRpgData = rpgData;
 
-    res.redirect(`/campagne/${form.campaign}`);
+    // ajoute le nouveau personnage à la liste et réordonne
+    newRpgData.characters.push(character);
+    newRpgData.characters.sort();
+
+    // initialize les données globales du personnage pour les parties à venir
+    newRpgData.stats[character] = {
+      globalMedian: 0,
+      globalAvg: 0,
+      globalSuccess: 0,
+      globalFail: 0,
+      dicesList: []
+    };
+
+    // met à jour le tableau global des stats par ordre alphabétique
+    const orderedStats = {};
+
+    newRpgData.characters.map((pj) => {
+      orderedStats[pj] = newRpgData.stats[pj];
+    });
+
+    newRpgData.stats = orderedStats;
+
+    // met à jour le fichier de sauvegarde avec les nouvelles données
+    dataMapper.updateGameFile(newRpgData, campaign);
+
+    res.redirect(`/campagne/${campaign}`);
   }
 }
 

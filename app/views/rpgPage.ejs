@@ -50,6 +50,7 @@
         
         <div class="rpgPage__main_games-section_article-container">
           <% rpgData.characters.forEach(character => { %>
+            <% if (game[character]) { %>
             <div>
               <h4 class="text-center bold"><%= character %></h4>
               <p>Dés lancés : <%= game[character].dices.length %></p>
@@ -76,7 +77,7 @@
               <p>Réussites : <span><%= game[character].success %></span></p>
               <p>Échecs : <span><%= game[character].fail %></span></p>
             </div>
-          <% }); %>
+          <% }}); %>
         </div>
       </article>
     <%} %>
