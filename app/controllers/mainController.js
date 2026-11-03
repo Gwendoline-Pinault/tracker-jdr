@@ -5,15 +5,13 @@ const authController = require('./authController');
 const mainController = {
   home: (req, res) => {
     const rpgFilesList = dataMapper.rpgFilesList();
-    const username = req.session.username;
 
-    res.render('index.ejs', { rpgFilesList, username });
+    res.render('index.ejs', { rpgFilesList });
   },
   rpgPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
     const rpgData = dataMapper.getRpgData(rpgSlug);
     const rpgList = dataMapper.rpgList();
-    const username = await req.session.username;
 
     // ordonne les parties par date décroissante (de la plus récente à la plus ancienne)
     const orderedGamesList = dataMapper.orderedGamesList(rpgData);
@@ -23,7 +21,7 @@ const mainController = {
       games: orderedGamesList
     }
 
-    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList, username });
+    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList });
   },
   characterPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
@@ -32,7 +30,6 @@ const mainController = {
     const rpgList = dataMapper.rpgList();
     const dicesList = rpgData.stats[character].dicesList.toSorted((a, b) => a - b);
     const counts = {};
-    const username = await req.session.username;
     
     for (const dice of dicesList) {
       counts[dice] = counts[dice] ? counts[dice] + 1 : 1;
@@ -47,16 +44,15 @@ const mainController = {
     const max = Math.max(...Object.values(counts));
     const min = Math.min(...Object.values(counts));
 
-    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max, username });
+    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max });
   },
   newGamePage: (req, res) => {
     const rpg = req.params.rpg;
     const rpgData = dataMapper.getRpgData(rpg);
     const characters = rpgData.characters;
     const rpgList = dataMapper.rpgList();
-    const username = req.session.username;
 
-    res.render('newGamePage.ejs', { rpg, characters, rpgData, rpgList, username });
+    res.render('newGamePage.ejs', { rpg, characters, rpgData, rpgList });
   },
   addGame: async (req, res) => {
     const form = await req.body;
@@ -149,15 +145,8 @@ const mainController = {
 
     res.redirect(`/campagne/${rpg}`);
   },
-  newCampaignPage: async (req, res) => {
-    const username = await req.session.username;
-
-    if (username === process.env.IDENTIFIANT) {
-      res.render('newCampaignPage', { username });
-
-    } else {
-      res.redirect('/');
-    }
+  newCampaignPage: (req, res) => {
+    res.render('newCampaignPage');
   },
   addNewRpg: async (req, res) => {
     const form = await req.body;
@@ -187,17 +176,11 @@ const mainController = {
     res.redirect('/');
   },
   newCharacterPage: async (req, res) => {
-    const username = await req.session.username;
     const rpg = req.params.rpg;
-
+    
     const campaign = dataMapper.getRpgData(rpg).name;
-
-    if (username === process.env.IDENTIFIANT) {
-      res.render('newCharacterPage', { username, rpg, campaign });
-
-    } else {
-      res.redirect(`/campagne/${rpg}`);
-    }
+    
+    res.render('newCharacterPage', { rpg, campaign });
   },
   addNewCharacter: async (req, res) => {
     const { character, campaign } = await req.body;

@@ -2,15 +2,9 @@
 
   <main class="homepage__main">
     <header class="homepage__main-header">
-      <% if (username) { %>
-        <a href="/nouvelle-campagne" class="button bg-primary">+</a>
-      <% } else { %>
-        <div></div>
-      <% } %>
+      <a href="/nouvelle-campagne" class="button bg-primary">+</a>
 
       <h1 class="homepage__main-header_title">Les campagnes</h1>
-      
-      <%- include('partials/loginButton', {username, slug: "bg-light"}) %>
     </header>
 
     <section class="homepage__main-section">

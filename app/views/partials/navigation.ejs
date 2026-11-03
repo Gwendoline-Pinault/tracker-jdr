@@ -5,7 +5,6 @@
       <% rpgList.forEach(rpg => { %>
         <a href="/campagne/<%= rpg.slug %>" class="nav-item button-<%= rpgData.slug %>"><%= rpg.shortName %></a>
       <% }); %>
-    <%- include('loginButton', {username, slug: rpgData.slug}) %>
     </nav>
   </section>
 
