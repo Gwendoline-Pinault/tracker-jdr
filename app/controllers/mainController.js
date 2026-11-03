@@ -1,6 +1,5 @@
 require('dotenv').config();
 const dataMapper = require('../models/datamapper');
-const authController = require('./authController');
 
 const mainController = {
   home: (req, res) => {
@@ -177,7 +176,7 @@ const mainController = {
   },
   newCharacterPage: async (req, res) => {
     const rpg = req.params.rpg;
-    
+
     const campaign = dataMapper.getRpgData(rpg).name;
     
     res.render('newCharacterPage', { rpg, campaign });

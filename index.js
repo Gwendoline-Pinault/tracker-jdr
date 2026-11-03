@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require('express');
 const router = require('./app/router');
-const session = require('express-session');
 const path = require('path');
 
 const app = express();
@@ -12,11 +11,6 @@ app.set('views', path.join(__dirname, '/app/views') );
 
 app.use('/static', express.static(path.join(__dirname,'/public')));
 app.use(express.urlencoded({extended: true}));
-app.use(session({
-  secret: process.env.SECRET,
-  resave: false,
-  saveUninitialized: true,
-}));
 
 app.use(router);
 
