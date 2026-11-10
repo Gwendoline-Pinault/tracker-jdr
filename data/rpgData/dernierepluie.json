@@ -6,7 +6,8 @@
     "Anthony",
     "Clarissa",
     "Ethan",
-    "Jay"
+    "Jay",
+    "Phil"
   ],
   "diceSystem": 20,
   "systemOrder": "ASC",
@@ -46,6 +47,8 @@
         9,
         9,
         9,
+        9,
+        9,
         10,
         10,
         11,
@@ -72,7 +75,7 @@
       ]
     },
     "Clarissa": {
-      "globalMedian": 13,
+      "globalMedian": 14,
       "globalAvg": 12,
       "globalSuccess": 0,
       "globalFail": 1,
@@ -103,6 +106,8 @@
         16,
         16,
         16,
+        16,
+        16,
         17,
         17,
         17,
@@ -123,6 +128,7 @@
         1,
         1,
         1,
+        2,
         2,
         3,
         4,
@@ -150,6 +156,7 @@
         14,
         15,
         15,
+        15,
         16,
         16,
         16,
@@ -163,7 +170,7 @@
       ]
     },
     "Jay": {
-      "globalMedian": 8,
+      "globalMedian": 9,
       "globalAvg": 10,
       "globalSuccess": 3,
       "globalFail": 2,
@@ -188,6 +195,7 @@
         7,
         7,
         8,
+        9,
         10,
         11,
         12,
@@ -205,8 +213,21 @@
         18,
         19,
         19,
+        19,
         20,
         20
+      ]
+    },
+    "Phil": {
+      "globalMedian": 6,
+      "globalAvg": 10,
+      "globalSuccess": 1,
+      "globalFail": 0,
+      "dicesList": [
+        1,
+        6,
+        12,
+        19
       ]
     }
   },
@@ -674,6 +695,60 @@
         "average": 8,
         "median": 8,
         "success": 0,
+        "fail": 0
+      }
+    },
+    "10/11/2026": {
+      "Anthony": {
+        "dices": [
+          9,
+          9
+        ],
+        "average": 9,
+        "median": 9,
+        "success": 0,
+        "fail": 0
+      },
+      "Clarissa": {
+        "dices": [
+          16,
+          16
+        ],
+        "average": 16,
+        "median": 16,
+        "success": 0,
+        "fail": 0
+      },
+      "Ethan": {
+        "dices": [
+          2,
+          15
+        ],
+        "average": 9,
+        "median": 2,
+        "success": 0,
+        "fail": 0
+      },
+      "Jay": {
+        "dices": [
+          19,
+          9
+        ],
+        "average": 14,
+        "median": 9,
+        "success": 0,
+        "fail": 0
+      },
+      "Phil": {
+        "dices": [
+          6,
+          19,
+          12,
+          1
+        ],
+        "average": 10,
+        "median": 6,
+        "success": 1,
         "fail": 0
       }
     }
