@@ -172,6 +172,8 @@ const mainController = {
 
     dataMapper.createGameFile(campaignData, form.slug);
 
+    //TODO: add colors to colorStyles.css
+
     res.redirect('/');
   },
   newCharacterPage: async (req, res) => {

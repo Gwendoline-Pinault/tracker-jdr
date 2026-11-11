@@ -190,7 +190,7 @@ a {
 
 .title {
   width: 100%;
-  height: 100px;
+  height: 60px;
   text-transform: uppercase;
   text-shadow: 2px 2px 2px var(--secondary-hover);
   color: var(--text-light);
@@ -689,6 +689,34 @@ a {
   margin: 10px;
 }
 
+.color-section-title {
+  text-align: left;
+  width: 95%;
+  margin: 0;
+  color: var(--text-light);
+}
+
+.new-campaign__color-section {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 90%;
+  gap: 15px;
+}
+
+.new-campaign__color-section li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.new-campaign__color-section label {
+  text-align: center;
+}
+
 .radio-div-container {
   width: 90%;
 }
@@ -933,7 +961,7 @@ _________________________________
   }
 
   .title {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .rpgPage__main_pj-recap {
@@ -1027,7 +1055,6 @@ _________________________________
   }
 
   .new-campaign-form {
-    margin-top: 10dvh;
     width: 30%;
   }
 
@@ -1037,8 +1064,8 @@ _________________________________
   }
 
   .new-campaign__form-section {
-    flex-grow: 0;
-    margin-top: 2dvh;
+    flex-grow: 1;
+    margin: 0;
     width: 100%;
   }
 
