@@ -5,7 +5,7 @@ const mainController = {
   home: (req, res) => {
     const rpgFilesList = dataMapper.rpgFilesList();
 
-    res.render('index.ejs', { rpgFilesList });
+    res.render('index.ejs', { rpgFilesList, pageType: "home" });
   },
   rpgPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
@@ -20,13 +20,15 @@ const mainController = {
       games: orderedGamesList
     }
 
-    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList });
+    res.render('rpgPage.ejs', { rpgData: orderedData, rpgList, pageType: "rpg" });
   },
   characterPage: async (req, res) => {
     const rpgSlug = req.params.rpg;
     const character = req.params.character;
     const rpgData = dataMapper.getRpgData(rpgSlug);
     const rpgList = dataMapper.rpgList();
+    const charactersList = rpgData.characters;
+    const characterIndex = charactersList.indexOf(character);
     const dicesList = rpgData.stats[character].dicesList.toSorted((a, b) => a - b);
     const counts = {};
     
@@ -43,7 +45,7 @@ const mainController = {
     const max = Math.max(...Object.values(counts));
     const min = Math.min(...Object.values(counts));
 
-    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max });
+    res.render('characterPage.ejs', { rpgData, character, rpgList, dicesList, counts, min, max, pageType: "character", charactersList, characterIndex });
   },
   newGamePage: (req, res) => {
     const rpg = req.params.rpg;

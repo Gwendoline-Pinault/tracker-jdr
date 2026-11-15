@@ -9,6 +9,22 @@
   </section>
 
   <section class="<%= rpgData.slug %>-icon nav-section">
-    <h1 class="title"><%= pageTitle %></h1>
+    <% if (pageType === "character") { %>
+      <h1 class="character-title">
+        <% if (characterIndex > 0) { %>
+          <a href="/campagne/<%= rpgData.slug %>/details/<%= charactersList[characterIndex - 1] %>" class="<%=rpgData.slug%>-color" aria-label="Personnage précédent" title="Personnage précédent"><i class="fa-solid fa-chevron-left"></i></a>
+        <% } else { %>
+          <span class="button" aria-disabled="true"></span>
+        <% } %>
+        <%= pageTitle %>
+        <% if (characterIndex >= 0 && characterIndex < charactersList.length - 1) { %>
+          <a href="/campagne/<%= rpgData.slug %>/details/<%= charactersList[characterIndex + 1] %>" class="<%=rpgData.slug%>-color" aria-label="Personnage suivant" title="Personnage suivant"><i class="fa-solid fa-chevron-right"></i></i></a>
+        <% } else { %>
+          <span class="button" aria-disabled="true"></span>
+        <% } %>
+      </h1>
+    <% } else { %>
+      <h1 class="title"><%= pageTitle %></h1>
+    <% } %>
   </section>
 </header>
